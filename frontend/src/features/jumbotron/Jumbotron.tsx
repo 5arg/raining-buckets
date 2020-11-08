@@ -39,11 +39,7 @@ export default function Jumbotron() {
       </Title>
       <SubTitle>Active NBA players stats. Quick. Beautiful.</SubTitle>
       <AnimationWrapper>
-        <animated.img
-          src={ball}
-          style={props}
-          onMouseEnter={() => console.log("enter")}
-        />
+        <animated.img src={ball} style={props} />
       </AnimationWrapper>
       <SearchPlayerButton>
         Search Player <ChevronDown />
