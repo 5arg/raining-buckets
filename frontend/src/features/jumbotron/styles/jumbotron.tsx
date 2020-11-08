@@ -19,10 +19,10 @@ export const Background = styled.div`
 export const Title = styled.h1`
   margin: 0;
   text-transform: uppercase;
-  padding-top: 90px;
+  padding-top: 200px;
   font-size: 70px;
   font-family: CarroisGothicSC-Regular;
-  color: #333333;
+  color: #e9e6e2;
   letter-spacing: 3.5px;
 `;
 
@@ -30,29 +30,30 @@ export const SubTitle = styled.h3`
   text-transform: uppercase;
   margin-top: 10px;
   font-family: CarroisGothicSC-Regular;
-  color: #606060;
+  color: #797979;
   letter-spacing: 2px;
 `;
 
 export const AnimationWrapper = styled.div`
-  margin-top: 400px;
+  margin-top: 360px;
   position: relative;
 `;
 
 export const SearchPlayerButton = styled.button`
-  background-color: transparent;
-  color: #333333;
-  border: 1px solid #333333;
-  border-radius: 5px;
+  background-color: #ff4a4a;
+  color: #e9e6e2;
+  border: none;
+  border-radius: 10px;
   padding: 15px 30px;
   text-transform: uppercase;
   font-size: 24px;
   letter-spacing: 2px;
-  transition: background-color 0.8s, color 0.8s;
+  outline: none;
+  opacity: 0.9;
+  transition: opacity 0.8s, background-color 0.8s;
   &:hover {
     cursor: pointer;
-    background-color: #333333;
-    color: white;
-    opacity: 0.8;
+    opacity: 1;
+    background-color: #fb3131;
   }
 `;
