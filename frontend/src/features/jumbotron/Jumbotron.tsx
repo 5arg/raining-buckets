@@ -6,6 +6,7 @@ import {
   SubTitle,
   AnimationWrapper,
   SearchPlayerButton,
+  ChevronDown,
 } from "./styles/jumbotron";
 import ball from "../../assets/ball.png";
 
@@ -38,9 +39,15 @@ export default function Jumbotron() {
       </Title>
       <SubTitle>Active NBA players stats. Quick. Beautiful.</SubTitle>
       <AnimationWrapper>
-        <animated.img src={ball} style={props} />
+        <animated.img
+          src={ball}
+          style={props}
+          onMouseEnter={() => console.log("enter")}
+        />
       </AnimationWrapper>
-      <SearchPlayerButton>Search Player</SearchPlayerButton>
+      <SearchPlayerButton>
+        Search Player <ChevronDown />
+      </SearchPlayerButton>
     </Background>
   );
 }

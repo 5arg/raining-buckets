@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { BsChevronDown } from "react-icons/bs";
 import bgCourt from "../../../assets/bg-court.jpg";
 
 export const Background = styled.div`
@@ -6,7 +7,7 @@ export const Background = styled.div`
   background: linear-gradient(
       0deg,
       rgb(255, 255, 255, 0.7),
-      rgba(40, 40, 40, 0.3)
+      rgba(40, 40, 40, 0.4)
     ),
     url(${bgCourt});
   background-size: cover;
@@ -30,7 +31,7 @@ export const SubTitle = styled.h3`
   text-transform: uppercase;
   margin-top: 10px;
   font-family: CarroisGothicSC-Regular;
-  color: #797979;
+  color: #d4d4d4;
   letter-spacing: 2px;
 `;
 
@@ -43,7 +44,7 @@ export const SearchPlayerButton = styled.button`
   background-color: #ff4a4a;
   color: #e9e6e2;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 15px 30px;
   text-transform: uppercase;
   font-size: 24px;
@@ -56,4 +57,9 @@ export const SearchPlayerButton = styled.button`
     opacity: 1;
     background-color: #fb3131;
   }
+`;
+
+export const ChevronDown = styled(BsChevronDown)`
+  margin-bottom: 2px;
+  vertical-align: middle;
 `;
