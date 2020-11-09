@@ -8,17 +8,27 @@ const router = new express.Router();
 
 router.get("/players", async (req, res) => {
   const playersPerPage = 20;
-  let options;
+  let options = [
+    {
+      $project: {
+        name: { $concat: ["$firstName", " ", "$lastName"] },
+        firstName: "$firstName",
+        lastName: "$lastName",
+        profilePicture: "$profilePicture",
+      },
+    },
+  ];
   if (req.query.name) {
     let regex = new RegExp(req.query.name, "i");
-    options = { $or: [{ firstName: regex }, { lastName: regex }] };
+    options.push({ $match: { name: { $regex: regex } } });
   }
   try {
-    const players = await Player.find(options).skip(
+    const players = await Player.aggregate(options).skip(
       parseInt(req.query.page * playersPerPage - playersPerPage)
     );
     res.send({ count: players.length, players: players.slice(0, 20) });
   } catch (error) {
+    console.log(error);
     res.status(500).send();
   }
 });
