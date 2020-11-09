@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   height: 150px;
-  background-color: #ff4a4a;
+  background-color: #6f8a70;
 `;
 
 export const Wrapper = styled.div`

@@ -48,7 +48,6 @@ export default function PlayerSearch() {
             <PlayerSearchItem player={player} />
           ))}
         </PlayerItemsContainer>
-        <p>{data?.data.count}</p>
       </SearchWrapper>
       <ChangePageButton
         disabled={data && data.data.count <= 20}

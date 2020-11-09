@@ -23,7 +23,7 @@ export const PlayerItemsContainer = styled.div`
 `;
 
 export const ChangePageButton = styled.button`
-  flex-basis: auto;
+  flex: 0 0 10%;
   background: transparent;
   outline: none;
   font-size: 30px;
@@ -35,6 +35,20 @@ export const ChangePageButton = styled.button`
 
 export const PlayerItem = styled.div`
   flex: 0 0 20%;
-  border: 1px solid black;
   margin-top: 5px;
+  @media (max-width: 1300px) {
+    flex: 0 0 25%;
+  }
+  @media (max-width: 1000px) {
+    flex: 0 0 33.333333333%;
+  }
+`;
+
+export const PlayerImage = styled.img`
+  opacity: 0.5;
+  transition: opacity 1s;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
 `;

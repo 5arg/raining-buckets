@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { BsChevronDown } from "react-icons/bs";
-import bgCourt from "../../../assets/bg-court.jpg";
+import bgCourt from "../../../assets/bg-cour-2.jpg";
 
 export const Background = styled.div`
   height: 100vh;
@@ -35,12 +35,8 @@ export const SubTitle = styled.h3`
   letter-spacing: 2px;
 `;
 
-export const AnimationWrapper = styled.div`
-  margin-top: 360px;
-  position: relative;
-`;
-
 export const SearchPlayerButton = styled.button`
+  margin-top: 360px;
   background-color: #ff4a4a;
   color: #e9e6e2;
   border: none;
