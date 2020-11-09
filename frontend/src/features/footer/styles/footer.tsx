@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  margin: 0px 200px auto;
+  margin: 0px 15% auto;
   color: #e9e6e2;
   display: flex;
   line-height: 118px;
