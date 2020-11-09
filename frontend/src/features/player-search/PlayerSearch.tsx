@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
@@ -6,27 +6,17 @@ import {
   Container,
   SearchWrapper,
   Input,
+  PlayerItemsContainer,
   ChangePageButton,
 } from "./styles/playerSearch";
-
-type PlayerType = {
-  firstName: string;
-  lastName: string;
-  teamAbbreviation: string;
-  teamId: number;
-  birthdate: string;
-  height: string;
-  weight: string;
-  position: string;
-  jerseyNumber: string;
-  profilePicture: Buffer;
-};
+import PlayerSearchItem from "./PlayerSearchItem";
+import { Player } from "../../types/player";
 
 export default function PlayerSearch() {
   const [searchInput, setSearchInput] = useState<string>("");
   const [pageNumber, setPageNumber] = useState<number>(1);
   const { isLoading, data, error } = useQuery<{
-    data: { count: number; players: PlayerType[] };
+    data: { count: number; players: Player[] };
   }>(
     ["players", { searchInput, pageNumber }],
     () =>
@@ -53,9 +43,11 @@ export default function PlayerSearch() {
             setPageNumber(1);
           }}
         />
-        {data?.data.players.map((player) => (
-          <p>{player.firstName + " " + player.lastName}</p>
-        ))}
+        <PlayerItemsContainer>
+          {data?.data.players.map((player) => (
+            <PlayerSearchItem player={player} />
+          ))}
+        </PlayerItemsContainer>
         <p>{data?.data.count}</p>
       </SearchWrapper>
       <ChangePageButton
