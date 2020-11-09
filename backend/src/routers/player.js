@@ -7,9 +7,17 @@ const SeasonTotals = require("../models/seasonTotals");
 const router = new express.Router();
 
 router.get("/players", async (req, res) => {
+  const playersPerPage = 20;
+  let options;
+  if (req.query.name) {
+    let regex = new RegExp(req.query.name, "i");
+    options = { $or: [{ firstName: regex }, { lastName: regex }] };
+  }
   try {
-    const players = await Player.find();
-    res.send(players);
+    const players = await Player.find(options).skip(
+      parseInt(req.query.page * playersPerPage - playersPerPage)
+    );
+    res.send({ count: players.length, players: players.slice(0, 20) });
   } catch (error) {
     res.status(500).send();
   }
