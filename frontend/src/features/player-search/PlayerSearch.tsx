@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { BiSearchAlt } from "react-icons/bi";
 import {
   Container,
   SearchWrapper,
+  InputWrapper,
   Input,
   PlayerItemsContainer,
   ChangePageButton,
@@ -17,15 +19,12 @@ export default function PlayerSearch() {
   const [pageNumber, setPageNumber] = useState<number>(1);
   const { isLoading, data, error } = useQuery<{
     data: { count: number; players: Player[] };
-  }>(
-    ["players", { searchInput, pageNumber }],
-    () =>
-      axios.get(
-        `http://localhost:3000/players?page=${pageNumber}${
-          searchInput && `&name=${searchInput}`
-        }`
-      ),
-    { onSuccess: (data) => console.log(data) }
+  }>(["players", { searchInput, pageNumber }], () =>
+    axios.get(
+      `http://localhost:3000/players?page=${pageNumber}${
+        searchInput && `&name=${searchInput}`
+      }`
+    )
   );
 
   return (
@@ -37,15 +36,22 @@ export default function PlayerSearch() {
         <BsChevronLeft />
       </ChangePageButton>
       <SearchWrapper>
-        <Input
-          onChange={({ target }) => {
-            setSearchInput(target.value);
-            setPageNumber(1);
-          }}
-        />
+        <InputWrapper>
+          <BiSearchAlt
+            style={{ position: "absolute", color: "#ff4a4a", bottom: 55 }}
+          />
+          <Input
+            onChange={({ target }) => {
+              setSearchInput(target.value);
+              setPageNumber(1);
+            }}
+            placeholder="Enter player name"
+          />
+        </InputWrapper>
+
         <PlayerItemsContainer>
-          {data?.data.players.map((player) => (
-            <PlayerSearchItem player={player} />
+          {data?.data.players.map((player, i) => (
+            <PlayerSearchItem key={i} player={player} />
           ))}
         </PlayerItemsContainer>
       </SearchWrapper>

@@ -7,7 +7,7 @@ const SeasonTotals = require("../models/seasonTotals");
 const router = new express.Router();
 
 router.get("/players", async (req, res) => {
-  const playersPerPage = 20;
+  const playersPerPage = 15;
   let options = [
     {
       $project: {
@@ -26,7 +26,10 @@ router.get("/players", async (req, res) => {
     const players = await Player.aggregate(options).skip(
       parseInt(req.query.page * playersPerPage - playersPerPage)
     );
-    res.send({ count: players.length, players: players.slice(0, 20) });
+    res.send({
+      count: players.length,
+      players: players.slice(0, playersPerPage),
+    });
   } catch (error) {
     console.log(error);
     res.status(500).send();

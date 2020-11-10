@@ -6,8 +6,8 @@ export const Background = styled.div`
   height: 100vh;
   background: linear-gradient(
       0deg,
-      rgb(255, 255, 255, 0.7),
-      rgba(40, 40, 40, 0.4)
+      rgb(255, 255, 255, 0.3),
+      rgba(40, 40, 40, 0.7)
     ),
     url(${bgCourt});
   background-size: cover;
@@ -20,7 +20,7 @@ export const Background = styled.div`
 export const Title = styled.h1`
   margin: 0;
   text-transform: uppercase;
-  padding-top: 200px;
+  padding-top: 150px;
   font-size: 70px;
   font-family: CarroisGothicSC-Regular;
   color: #e9e6e2;
@@ -36,7 +36,7 @@ export const SubTitle = styled.h3`
 `;
 
 export const SearchPlayerButton = styled.button`
-  margin-top: 360px;
+  margin-top: 400px;
   background-color: #ff4a4a;
   color: #e9e6e2;
   border: none;
