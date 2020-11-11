@@ -7,7 +7,7 @@ const SeasonTotals = require("../models/seasonTotals");
 const router = new express.Router();
 
 router.get("/players", async (req, res) => {
-  const playersPerPage = 15;
+  const playersPerPage = 12;
   let options = [
     {
       $project: {

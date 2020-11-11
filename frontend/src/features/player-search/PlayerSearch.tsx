@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useQuery } from "react-query";
+import { usePaginatedQuery } from "react-query";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import {
@@ -17,7 +17,7 @@ import { Player } from "../../types/player";
 export default function PlayerSearch() {
   const [searchInput, setSearchInput] = useState<string>("");
   const [pageNumber, setPageNumber] = useState<number>(1);
-  const { isLoading, data, error } = useQuery<{
+  const { isLoading, resolvedData, error } = usePaginatedQuery<{
     data: { count: number; players: Player[] };
   }>(["players", { searchInput, pageNumber }], () =>
     axios.get(
@@ -48,15 +48,14 @@ export default function PlayerSearch() {
             placeholder="Enter player name"
           />
         </InputWrapper>
-
         <PlayerItemsContainer>
-          {data?.data.players.map((player, i) => (
+          {resolvedData?.data.players.map((player, i) => (
             <PlayerSearchItem key={i} player={player} />
           ))}
         </PlayerItemsContainer>
       </SearchWrapper>
       <ChangePageButton
-        disabled={data && data.data.count <= 20}
+        disabled={(resolvedData && resolvedData.data.count <= 20) || false}
         onClick={() => setPageNumber((pageNumber) => pageNumber + 1)}
       >
         <BsChevronRight />

@@ -37,7 +37,7 @@ export const SubTitle = styled.h3`
 
 export const SearchPlayerButton = styled.button`
   margin-top: 400px;
-  background-color: #ff4a4a;
+  background-color: #68413c;
   color: #e9e6e2;
   border: none;
   border-radius: 15px;
@@ -46,12 +46,11 @@ export const SearchPlayerButton = styled.button`
   font-size: 24px;
   letter-spacing: 2px;
   outline: none;
-  opacity: 0.9;
+  opacity: 0.8;
   transition: opacity 0.8s, background-color 0.8s;
   &:hover {
     cursor: pointer;
     opacity: 1;
-    background-color: #fb3131;
   }
 `;
 
