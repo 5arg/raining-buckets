@@ -1,13 +1,13 @@
 import styled from "styled-components/macro";
 import { BsChevronDown } from "react-icons/bs";
-import bgCourt from "../../../assets/bg-court.jpg";
+import bgCourt from "../../../assets/bg-cour-2.jpg";
 
 export const Background = styled.div`
   height: 100vh;
   background: linear-gradient(
       0deg,
-      rgb(255, 255, 255, 0.7),
-      rgba(40, 40, 40, 0.4)
+      rgb(255, 255, 255, 0.3),
+      rgba(40, 40, 40, 0.7)
     ),
     url(${bgCourt});
   background-size: cover;
@@ -20,7 +20,7 @@ export const Background = styled.div`
 export const Title = styled.h1`
   margin: 0;
   text-transform: uppercase;
-  padding-top: 200px;
+  padding-top: 150px;
   font-size: 70px;
   font-family: CarroisGothicSC-Regular;
   color: #e9e6e2;
@@ -35,13 +35,9 @@ export const SubTitle = styled.h3`
   letter-spacing: 2px;
 `;
 
-export const AnimationWrapper = styled.div`
-  margin-top: 360px;
-  position: relative;
-`;
-
 export const SearchPlayerButton = styled.button`
-  background-color: #ff4a4a;
+  margin-top: 400px;
+  background-color: #68413c;
   color: #e9e6e2;
   border: none;
   border-radius: 15px;
@@ -50,12 +46,11 @@ export const SearchPlayerButton = styled.button`
   font-size: 24px;
   letter-spacing: 2px;
   outline: none;
-  opacity: 0.9;
+  opacity: 0.8;
   transition: opacity 0.8s, background-color 0.8s;
   &:hover {
     cursor: pointer;
     opacity: 1;
-    background-color: #fb3131;
   }
 `;
 

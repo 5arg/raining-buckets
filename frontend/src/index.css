@@ -17,3 +17,9 @@ code {
   src: local("CarroisGothicSC-Regular"),
     url(./fonts/CarroisGothicSC-Regular.ttf) format("truetype");
 }
+
+@font-face {
+  font-family: "PTSansCaption-Regular";
+  src: local("PTSansCaption-Regular"),
+    url(./fonts/PTSansCaption-Regular.ttf) format("truetype");
+}
