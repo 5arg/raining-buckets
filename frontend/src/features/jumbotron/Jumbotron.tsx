@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 import {
   Background,
   Title,
@@ -15,10 +16,16 @@ export default function Jumbotron() {
         <span style={{ fontSize: 86 }}>B</span>uckets
       </Title>
       <SubTitle>Active NBA players stats. Quick. Beautiful.</SubTitle>
-
-      <SearchPlayerButton>
-        Search Player <ChevronDown />
-      </SearchPlayerButton>
+      <Link
+        activeClass="active"
+        to="player-search"
+        smooth={true}
+        duration={500}
+      >
+        <SearchPlayerButton>
+          Search Player <ChevronDown />
+        </SearchPlayerButton>
+      </Link>
     </Background>
   );
 }

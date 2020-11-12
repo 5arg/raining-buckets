@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { usePaginatedQuery } from "react-query";
+import { Element } from "react-scroll";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import {
@@ -28,7 +29,7 @@ export default function PlayerSearch() {
   );
 
   return (
-    <Container>
+    <Container name="player-search">
       <ChangePageButton
         disabled={pageNumber <= 1}
         onClick={() => setPageNumber((pageNumber) => pageNumber - 1)}

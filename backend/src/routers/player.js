@@ -15,6 +15,7 @@ router.get("/players", async (req, res) => {
         firstName: "$firstName",
         lastName: "$lastName",
         profilePicture: "$profilePicture",
+        teamAbbreviation: "$teamAbbreviation",
       },
     },
   ];
