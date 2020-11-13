@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { BsChevronDown } from "react-icons/bs";
-import bgCourt from "../../../assets/bg-cour-2.jpg";
+import bgCourt from "../../assets/bg-cour-2.jpg";
 
 export const Background = styled.div`
   height: 100vh;

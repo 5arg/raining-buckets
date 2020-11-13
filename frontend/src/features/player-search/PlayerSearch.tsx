@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { usePaginatedQuery } from "react-query";
-import { Element } from "react-scroll";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import {
@@ -11,8 +10,8 @@ import {
   Input,
   PlayerItemsContainer,
   ChangePageButton,
-} from "./styles/playerSearch";
-import PlayerSearchItem from "./PlayerSearchItem";
+} from "./playerSearch.styles";
+import PlayerSearchItem from "./player-search-item/PlayerSearchItem";
 import { Player } from "../../types/player";
 
 export default function PlayerSearch() {

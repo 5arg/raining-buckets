@@ -1,11 +1,11 @@
 import React from "react";
-import { Player } from "../../types/player";
+import { Player } from "../../../types/player";
 import {
   PlayerItem,
   PlayerImage,
   PlayerName,
   TeamAbbreviation,
-} from "./styles/playerSearch";
+} from "./playerSearchItem.styles";
 
 type PlayerSearchItemProps = {
   player: Player;
