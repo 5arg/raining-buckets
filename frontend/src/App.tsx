@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import MainLayout from "./layout/MainLayout";
 import Landing from "./pages/Landing";
-import PlayerStats from "./pages/PlayerStats";
+import PlayerProfile from "./pages/PlayerProfile";
 
 function App() {
   return (
@@ -11,9 +12,11 @@ function App() {
           <Route exact path="/">
             <Landing />
           </Route>
-          <Route exact path="/player/:id">
-            <PlayerStats />
-          </Route>
+          <MainLayout>
+            <Route exact path="/player/:id">
+              <PlayerProfile />
+            </Route>
+          </MainLayout>
         </Switch>
       </Router>
     </div>
