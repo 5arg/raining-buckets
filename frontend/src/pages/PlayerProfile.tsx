@@ -1,12 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-
-interface ParamTypes {
-  id: string;
-}
+import PlayerInfo from "../features/player-profile/player-info/PlayerInfo";
 
 export default function PlayerProfile() {
-  const { id } = useParams<ParamTypes>();
-
-  return <>{id}</>;
+  return (
+    <>
+      <PlayerInfo />
+    </>
+  );
 }
