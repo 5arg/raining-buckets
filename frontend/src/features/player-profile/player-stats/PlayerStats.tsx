@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import CareerHighs from "./career-highs/CareerHighs";
 import CareerTotals from "./career-totals/CareerTotals";
@@ -14,12 +14,12 @@ export default function PlayerStats() {
   return (
     <Container>
       <StatsWrapper>
-        <StatTitle>Career totals</StatTitle>
+        <StatTitle>Career averages</StatTitle>
         <CareerTotals playerId={id} />
       </StatsWrapper>
       <StatsWrapper>
         <StatTitle>Career highs</StatTitle>
-        <CareerHighs />
+        <CareerHighs playerId={id} />
       </StatsWrapper>
       <StatsWrapper>
         <StatTitle>Seasons</StatTitle>

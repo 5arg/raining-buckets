@@ -21,7 +21,6 @@ export default function SearchDropdown() {
     () =>
       axios.get(`http://localhost:3000/players/dropdown?name=${searchInput}`),
     {
-      onSuccess: (data) => console.log(data),
       enabled: searchInput.trim().length > 0,
     }
   );
