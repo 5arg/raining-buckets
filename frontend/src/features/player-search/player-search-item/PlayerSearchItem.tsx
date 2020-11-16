@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Player } from "../../../types/player";
+import { PlayerType } from "../../../types/player";
 import {
   PlayerItem,
   PlayerImage,
@@ -9,7 +9,7 @@ import {
 } from "./playerSearchItem.styles";
 
 type PlayerSearchItemProps = {
-  player: Player;
+  player: PlayerType;
 };
 
 export default function PlayerSearchItem({ player }: PlayerSearchItemProps) {

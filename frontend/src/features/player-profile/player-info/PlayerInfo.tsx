@@ -17,7 +17,7 @@ import {
   JerseyNumber,
 } from "./playerInfo.styles";
 import SearchDropdown from "./search-dropdown/SearchDropdown";
-import { Player } from "../../../types/player";
+import { PlayerType } from "../../../types/player";
 import {
   heightInFeetAndCm,
   teamAbbrevationToTeamName,
@@ -32,7 +32,7 @@ interface ParamTypes {
 export default function PlayerInfo() {
   const { id } = useParams<ParamTypes>();
   const { isLoading, data, error } = useQuery<{
-    data: Player;
+    data: PlayerType;
   }>(["players", { id }], () =>
     axios.get(`http://localhost:3000/players/${id}`)
   );

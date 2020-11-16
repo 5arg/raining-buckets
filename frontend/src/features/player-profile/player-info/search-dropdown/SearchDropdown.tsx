@@ -8,14 +8,14 @@ import {
   Dropdown,
   DropdownItem,
 } from "./searchDropdown.styles";
-import { Player } from "../../../../types/player";
+import { PlayerType } from "../../../../types/player";
 import { useHistory } from "react-router-dom";
 
 export default function SearchDropdown() {
   const [searchInput, setSearchInput] = useState<string>("");
   const history = useHistory();
   const { isLoading, resolvedData, error } = usePaginatedQuery<{
-    data: Player[];
+    data: PlayerType[];
   }>(
     ["players", { searchInput }],
     () =>

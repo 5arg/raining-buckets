@@ -12,13 +12,13 @@ import {
   ChangePageButton,
 } from "./playerSearch.styles";
 import PlayerSearchItem from "./player-search-item/PlayerSearchItem";
-import { Player } from "../../types/player";
+import { PlayerType } from "../../types/player";
 
 export default function PlayerSearch() {
   const [searchInput, setSearchInput] = useState<string>("");
   const [pageNumber, setPageNumber] = useState<number>(1);
   const { isLoading, resolvedData, error } = usePaginatedQuery<{
-    data: { count: number; players: Player[] };
+    data: { count: number; players: PlayerType[] };
   }>(["players", { searchInput, pageNumber }], () =>
     axios.get(
       `http://localhost:3000/players?page=${pageNumber}${
