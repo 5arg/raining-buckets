@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import axios from "axios";
-import { BiSearchAlt } from "react-icons/bi";
 import {
   Wrapper,
   PlayerImage,
@@ -11,13 +10,13 @@ import {
   PlayerName,
   Info,
   InfoText,
-  Input,
   InputWrapper,
   ButtonWrapper,
   JerseyWrapper,
   Jersey,
   JerseyNumber,
 } from "./playerInfo.styles";
+import SearchDropdown from "./search-dropdown/SearchDropdown";
 import { Player } from "../../../types/player";
 import {
   heightInFeetAndCm,
@@ -40,10 +39,7 @@ export default function PlayerInfo() {
   return (
     <Wrapper>
       <InputWrapper>
-        <BiSearchAlt
-          style={{ position: "absolute", color: "#ff4a4a", top: 24 }}
-        />
-        <Input placeholder="Search player" />
+        <SearchDropdown />
       </InputWrapper>
       <ButtonWrapper>
         <CompareButton>Compare</CompareButton>

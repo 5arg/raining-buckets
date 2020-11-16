@@ -12,18 +12,6 @@ export const InputWrapper = styled.div`
   font-size: 18px;
 `;
 
-export const Input = styled.input`
-  border: 0;
-  outline: 0;
-  border-bottom: 1px solid #ff4a4a;
-  text-align: center;
-  font-family: PTSansCaption-Regular;
-  line-height: 1.6;
-  margin-top: 20px;
-  font-size: 16px;
-  width: 250px;
-`;
-
 export const ButtonWrapper = styled.div`
   flex: 0 0 50%;
   text-align: right;

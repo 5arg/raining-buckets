@@ -54,9 +54,7 @@ router.get("/players/dropdown", async (req, res) => {
 
   try {
     const players = await Player.aggregate(options).limit(limit);
-    res.send({
-      players: players,
-    });
+    res.send(players);
   } catch (error) {
     console.log(error);
     res.status(500).send();
