@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ScrollToTop from "./helpers/ScrollToTop";
 import MainLayout from "./layout/MainLayout";
 import Landing from "./pages/Landing";
 import PlayerProfile from "./pages/PlayerProfile";
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <Landing />
