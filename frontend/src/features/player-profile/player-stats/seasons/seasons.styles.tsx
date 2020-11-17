@@ -31,7 +31,6 @@ type YearDropdownProps = {
 export const YearDropdown = styled.ul<YearDropdownProps>`
   position: absolute;
   display: ${(e) => (e.show ? "normal" : "none")};
-  font-family: PTSansCaption-Regular;
   list-style-type: none;
   margin: 0px 20px auto;
   padding: 0;
@@ -54,7 +53,6 @@ export const YearOption = styled.li`
 `;
 
 export const Text = styled.p`
-  font-family: PTSansCaption-Regular;
   font-size: 18px;
   letter-spacing: 1px;
 `;
