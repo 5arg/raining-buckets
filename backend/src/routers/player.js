@@ -37,6 +37,30 @@ router.get("/players", async (req, res) => {
   }
 });
 
+router.get("/players/dropdown", async (req, res) => {
+  const limit = 10;
+  let regex = new RegExp(req.query.name, "i");
+  let options = [
+    {
+      $project: {
+        name: { $concat: ["$firstName", " ", "$lastName"] },
+        firstName: "$firstName",
+        lastName: "$lastName",
+        teamAbbreviation: "$teamAbbreviation",
+      },
+    },
+    { $match: { name: { $regex: regex } } },
+  ];
+
+  try {
+    const players = await Player.aggregate(options).limit(limit);
+    res.send(players);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send();
+  }
+});
+
 router.get("/players/:id", async (req, res) => {
   const playerId = req.params.id;
   try {

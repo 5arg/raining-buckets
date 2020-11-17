@@ -6,7 +6,7 @@ import {
   SubTitle,
   SearchPlayerButton,
   ChevronDown,
-} from "./styles/jumbotron";
+} from "./jumbotron.styles";
 
 export default function Jumbotron() {
   return (
