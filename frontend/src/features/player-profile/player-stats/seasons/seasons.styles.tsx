@@ -10,7 +10,8 @@ export const DropdownValueWrapper = styled.div`
   border: 1px solid #ff4a4a;
   padding: 5px 0px;
   font-size: 18px;
-
+  background: #ff4a4a;
+  color: white;
   &:hover {
     cursor: pointer;
   }
@@ -32,7 +33,7 @@ export const YearDropdown = styled.ul<YearDropdownProps>`
   display: ${(e) => (e.show ? "normal" : "none")};
   font-family: PTSansCaption-Regular;
   list-style-type: none;
-  margin: 0px 15px auto;
+  margin: 0px 20px auto;
   padding: 0;
   background: #ff4a4a;
   border-radius: 5px;
@@ -50,4 +51,10 @@ export const YearOption = styled.li`
     color: #ff4a4a;
     cursor: pointer;
   }
+`;
+
+export const Text = styled.p`
+  font-family: PTSansCaption-Regular;
+  font-size: 18px;
+  letter-spacing: 1px;
 `;
