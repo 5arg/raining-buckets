@@ -14,6 +14,10 @@ type TabButtonProps = {
 export const StatsWrapper = styled.div`
   flex: 1 0 0;
   text-align: center;
+
+  @media (max-width: 1100px) {
+    flex: 0 0 100%;
+  }
 `;
 
 export const StatTitle = styled.p<TabButtonProps>`

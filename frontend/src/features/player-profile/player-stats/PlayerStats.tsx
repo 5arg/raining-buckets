@@ -22,7 +22,7 @@ export default function PlayerStats() {
         <CareerHighs playerId={id} />
       </StatsWrapper>
       <StatsWrapper>
-        <StatTitle>Seasons</StatTitle>
+        <StatTitle>Season averages</StatTitle>
         <Seasons playerId={id} />
       </StatsWrapper>
     </Container>

@@ -10,6 +10,10 @@ export const Input = styled.input`
   margin-top: 20px;
   font-size: 16px;
   width: 250px;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 type DropdownWrapperProps = {
@@ -23,6 +27,10 @@ export const DropdownWrapper = styled.div`
   background: #ff4a4a;
   border-radius: 5px;
   margin-top: 5px;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const Dropdown = styled.ul`

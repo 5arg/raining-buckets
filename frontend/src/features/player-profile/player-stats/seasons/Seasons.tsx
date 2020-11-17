@@ -89,7 +89,7 @@ export default function Seasons({ playerId }: SeasonsProps) {
         .filter((team) => team.team !== "TOT")
         .map((team) => team.gamesPlayed)
         .join(" | ")}`}</Text>
-      <Text>{`Points average: ${selectedSeason?.teams
+      <Text>{`Points: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => team.points)
         .join(" | ")}`}</Text>
