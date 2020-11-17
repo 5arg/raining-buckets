@@ -59,7 +59,7 @@ export const Info = styled.div`
 export const InfoText = styled.p`
   flex: 0 0 40%;
   font-family: PTSansCaption-Regular;
-  font-size: 18px;
+  font-size: 20px;
   color: #595959;
   letter-spacing: 1px;
 `;

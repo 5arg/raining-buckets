@@ -19,10 +19,11 @@ export default function CareerHighs({ playerId }: CareerHighsProps) {
   }
   return (
     <>
-      <Text>{`Points: ${data?.data.points.map((e) => e.value)}`}</Text>
-      <Text>{`Assists: ${data?.data.assists.map((e) => e.value)}`}</Text>
-      <Text>{`Blocks: ${data?.data.blocks.map((e) => e.value)}`}</Text>
-      <Text>{`Steals: ${data?.data.steals.map((e) => e.value)}`}</Text>
+      <Text>{`Points: ${data?.data.points.map((e) => e.value)[0]}`}</Text>
+      <Text>{`Assists: ${data?.data.assists.map((e) => e.value)[0]}`}</Text>
+      <Text>{`Rebounds: ${data?.data.rebounds.map((e) => e.value)[0]}`}</Text>
+      <Text>{`Blocks: ${data?.data.blocks.map((e) => e.value)[0]}`}</Text>
+      <Text>{`Steals: ${data?.data.steals.map((e) => e.value)[0]}`}</Text>
     </>
   );
 }

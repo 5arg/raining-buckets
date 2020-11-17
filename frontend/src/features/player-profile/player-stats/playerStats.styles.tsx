@@ -26,7 +26,7 @@ export const StatTitle = styled.p<TabButtonProps>`
   border-radius: 5px;
   border: ${(e) => (e.active ? "2px solid #ff4a4a" : "2px solid white")};
   font-weight: ${(e) => (e.active ? "bold" : "normal")};
-  margin-right: 20px;
+  margin: 0 10px;
   transition: border 0.7s;
   border: 2px solid #ff4a4a;
   font-weight: bold;

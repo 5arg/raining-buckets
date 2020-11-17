@@ -23,7 +23,7 @@ export default function PlayerStats() {
       </StatsWrapper>
       <StatsWrapper>
         <StatTitle>Seasons</StatTitle>
-        <Seasons />
+        <Seasons playerId={id} />
       </StatsWrapper>
     </Container>
   );
