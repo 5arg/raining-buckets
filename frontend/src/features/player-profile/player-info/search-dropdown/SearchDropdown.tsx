@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { usePaginatedQuery } from "react-query";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 import { BiSearchAlt } from "react-icons/bi";
 import {
   Input,
@@ -10,23 +8,14 @@ import {
   DropdownItem,
   SearchWrapper,
 } from "./searchDropdown.styles";
-import { PlayerType } from "../../../../types/player";
 import useDetectClickOutside from "../../../../hooks/useDetectClickOutside";
+import usePlayersDropdown from "../../../../hooks/react-query/usePlayersDropdown";
 
 export default function SearchDropdown() {
   const [searchInput, setSearchInput] = useState<string>("");
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const history = useHistory();
-  const { resolvedData } = usePaginatedQuery<{
-    data: PlayerType[];
-  }>(
-    ["players", { searchInput }],
-    () =>
-      axios.get(`http://localhost:3000/players/dropdown?name=${searchInput}`),
-    {
-      enabled: searchInput.trim().length > 0,
-    }
-  );
+  const { resolvedData } = usePlayersDropdown(searchInput);
   const wrapperRef = useRef(null);
   useDetectClickOutside(wrapperRef, () => setShowDropdown(false));
 
@@ -49,7 +38,7 @@ export default function SearchDropdown() {
       <DropdownWrapper show={searchInput.trim().length > 0 && showDropdown}>
         <Dropdown>
           {resolvedData &&
-            resolvedData.data.map((player, i) => (
+            resolvedData?.map((player, i) => (
               <DropdownItem
                 key={i}
                 onClick={() => {

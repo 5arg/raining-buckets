@@ -1,11 +1,6 @@
 import React, { useRef, useState } from "react";
-import { useQuery } from "react-query";
-import axios from "axios";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
-import {
-  SeasonAveragesType,
-  SeasonType,
-} from "../../../../types/seasonAverages";
+import { SeasonType } from "../../../../types/seasonAverages";
 import useDetectClickOutside from "../../../../hooks/useDetectClickOutside";
 import {
   DropdownWrapper,
@@ -15,6 +10,7 @@ import {
   YearDropdown,
 } from "./seasons.styles";
 import { StatText } from "../../../common/common.styles";
+import useSeasonAverages from "../../../../hooks/react-query/useSeasonAverages";
 
 type SeasonsProps = {
   playerId: string;
@@ -23,17 +19,9 @@ type SeasonsProps = {
 export default function Seasons({ playerId }: SeasonsProps) {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const [selectedSeason, setSelectedSeason] = useState<SeasonType>();
-  const { isLoading, data, error } = useQuery<{
-    data: SeasonAveragesType;
-  }>(
-    ["season-averages", { playerId }],
-    () => axios.get(`http://localhost:3000/players/seasontotals/${playerId}`),
-    {
-      onSuccess: (data) => {
-        setSelectedSeason(data.data.seasons.slice(-1)[0]);
-      },
-      refetchOnWindowFocus: false,
-    }
+  const { isLoading, data, error } = useSeasonAverages(
+    playerId,
+    setSelectedSeason
   );
   const wrapperRef = useRef(null);
   useDetectClickOutside(wrapperRef, () => setShowDropdown(false));
@@ -66,7 +54,7 @@ export default function Seasons({ playerId }: SeasonsProps) {
           </DropdownValue>
         </DropdownValueWrapper>
         <YearDropdown show={showDropdown}>
-          {data?.data.seasons.map((season, i) => (
+          {data?.seasons.map((season, i) => (
             <YearOption
               key={i}
               onClick={() => {
