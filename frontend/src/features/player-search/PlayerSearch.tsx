@@ -53,6 +53,9 @@ export default function PlayerSearch() {
             <PlayerSearchItem key={i} player={player} />
           ))}
         </PlayerItemsContainer>
+        {resolvedData?.data.players.length === 0 && <p>No players found.</p>}
+        {isLoading && <p>Loading</p>}
+        {error && <p>There has been an error.</p>}
       </SearchWrapper>
       <ChangePageButton
         disabled={(resolvedData && resolvedData.data.count <= 20) || false}

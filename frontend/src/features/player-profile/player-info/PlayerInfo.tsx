@@ -44,27 +44,31 @@ export default function PlayerInfo() {
       <ButtonWrapper>
         <CompareButton>Compare</CompareButton>
       </ButtonWrapper>
-      <Meta>
-        <PlayerImage
-          src={`data:image/png;base64,${data?.data.profilePicture}`}
-        />
-        <PlayerName>{`${data?.data.firstName} ${data?.data.lastName}`}</PlayerName>
-        <Info>
-          <InfoText>
-            {teamAbbrevationToTeamName(data?.data.teamAbbreviation)}
-          </InfoText>
-          <InfoText>{data?.data.position}</InfoText>
-          <InfoText>{heightInFeetAndCm(data?.data.height)}</InfoText>
-          <InfoText>{weightInPoundsAndKg(data?.data.weight)}</InfoText>
-          <InfoText>
-            {new Date(data?.data.birthdate || "").toLocaleDateString()}
-          </InfoText>
-          <JerseyWrapper>
-            <Jersey src={jersey} />
-            <JerseyNumber>{data?.data.jerseyNumber}</JerseyNumber>
-          </JerseyWrapper>
-        </Info>
-      </Meta>
+      {data && (
+        <Meta>
+          <PlayerImage
+            src={`data:image/png;base64,${data.data.profilePicture}`}
+          />
+          <PlayerName>{`${data?.data.firstName} ${data.data.lastName}`}</PlayerName>
+          <Info>
+            <InfoText>
+              {teamAbbrevationToTeamName(data.data.teamAbbreviation)}
+            </InfoText>
+            <InfoText>{data?.data.position}</InfoText>
+            <InfoText>{heightInFeetAndCm(data.data.height)}</InfoText>
+            <InfoText>{weightInPoundsAndKg(data.data.weight)}</InfoText>
+            <InfoText>
+              {new Date(data?.data.birthdate || "").toLocaleDateString()}
+            </InfoText>
+            <JerseyWrapper>
+              <Jersey src={jersey} />
+              <JerseyNumber>{data?.data.jerseyNumber}</JerseyNumber>
+            </JerseyWrapper>
+          </Info>
+        </Meta>
+      )}
+      {isLoading && <p>Loading</p>}
+      {error && <p>There has been an error.</p>}
     </Wrapper>
   );
 }

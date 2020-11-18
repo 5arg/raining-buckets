@@ -125,6 +125,8 @@ export default function Seasons({ playerId }: SeasonsProps) {
         .filter((team) => team.team !== "TOT")
         .map((team) => (team.ftPct * 100).toFixed(1) + "%")
         .join(" | ")}`}</StatText>
+      {isLoading && <p>Loading</p>}
+      {error && <p>There has been an error.</p>}
     </>
   );
 }

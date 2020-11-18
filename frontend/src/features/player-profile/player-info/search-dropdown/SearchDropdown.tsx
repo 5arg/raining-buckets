@@ -17,7 +17,7 @@ export default function SearchDropdown() {
   const [searchInput, setSearchInput] = useState<string>("");
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const history = useHistory();
-  const { isLoading, resolvedData, error } = usePaginatedQuery<{
+  const { resolvedData } = usePaginatedQuery<{
     data: PlayerType[];
   }>(
     ["players", { searchInput }],

@@ -32,6 +32,8 @@ export default function CareerTotals({ playerId }: CareerTotalsProps) {
       <StatText>{`Free throw percentage: ${
         data?.data.ftPct && (data.data.ftPct * 100).toFixed(1)
       }%`}</StatText>
+      {isLoading && <p>Loading</p>}
+      {error && <p>There has been an error.</p>}
     </>
   );
 }

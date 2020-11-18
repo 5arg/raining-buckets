@@ -34,6 +34,8 @@ export default function CareerHighs({ playerId }: CareerHighsProps) {
       <StatText>{`Steals: ${
         data?.data.steals.map((e) => e.value)[0]
       }`}</StatText>
+      {isLoading && <p>Loading</p>}
+      {error && <p>There has been an error.</p>}
     </>
   );
 }
