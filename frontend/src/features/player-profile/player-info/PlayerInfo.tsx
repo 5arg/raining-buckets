@@ -1,7 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
-import axios from "axios";
 import {
   Wrapper,
   PlayerImage,
@@ -17,13 +15,13 @@ import {
   JerseyNumber,
 } from "./playerInfo.styles";
 import SearchDropdown from "./search-dropdown/SearchDropdown";
-import { PlayerType } from "../../../types/player";
 import {
   heightInFeetAndCm,
   teamAbbrevationToTeamName,
   weightInPoundsAndKg,
 } from "../../../utils/Utils";
 import jersey from "../../../assets/jersey.jpg";
+import usePlayer from "../../../hooks/react-query/usePlayer";
 
 interface ParamTypes {
   id: string;
@@ -31,11 +29,7 @@ interface ParamTypes {
 
 export default function PlayerInfo() {
   const { id } = useParams<ParamTypes>();
-  const { isLoading, data, error } = useQuery<{
-    data: PlayerType;
-  }>(["players", { id }], () =>
-    axios.get(`http://localhost:3000/players/${id}`)
-  );
+  const { isLoading, data, error } = usePlayer(id);
   return (
     <Wrapper>
       <InputWrapper>
@@ -46,23 +40,21 @@ export default function PlayerInfo() {
       </ButtonWrapper>
       {data && (
         <Meta>
-          <PlayerImage
-            src={`data:image/png;base64,${data.data.profilePicture}`}
-          />
-          <PlayerName>{`${data?.data.firstName} ${data.data.lastName}`}</PlayerName>
+          <PlayerImage src={`data:image/png;base64,${data.profilePicture}`} />
+          <PlayerName>{`${data?.firstName} ${data.lastName}`}</PlayerName>
           <Info>
             <InfoText>
-              {teamAbbrevationToTeamName(data.data.teamAbbreviation)}
+              {teamAbbrevationToTeamName(data.teamAbbreviation)}
             </InfoText>
-            <InfoText>{data?.data.position}</InfoText>
-            <InfoText>{heightInFeetAndCm(data.data.height)}</InfoText>
-            <InfoText>{weightInPoundsAndKg(data.data.weight)}</InfoText>
+            <InfoText>{data?.position}</InfoText>
+            <InfoText>{heightInFeetAndCm(data.height)}</InfoText>
+            <InfoText>{weightInPoundsAndKg(data.weight)}</InfoText>
             <InfoText>
-              {new Date(data?.data.birthdate || "").toLocaleDateString()}
+              {new Date(data?.birthdate || "").toLocaleDateString()}
             </InfoText>
             <JerseyWrapper>
               <Jersey src={jersey} />
-              <JerseyNumber>{data?.data.jerseyNumber}</JerseyNumber>
+              <JerseyNumber>{data?.jerseyNumber}</JerseyNumber>
             </JerseyWrapper>
           </Info>
         </Meta>
