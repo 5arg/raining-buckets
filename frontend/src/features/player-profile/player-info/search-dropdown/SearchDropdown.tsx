@@ -11,7 +11,7 @@ import {
   SearchWrapper,
 } from "./searchDropdown.styles";
 import { PlayerType } from "../../../../types/player";
-import detectClickOutsideComponent from "../../../../helpers/detectClickOutsideComponent";
+import useDetectClickOutside from "../../../../hooks/useDetectClickOutside";
 
 export default function SearchDropdown() {
   const [searchInput, setSearchInput] = useState<string>("");
@@ -28,7 +28,7 @@ export default function SearchDropdown() {
     }
   );
   const wrapperRef = useRef(null);
-  detectClickOutsideComponent(wrapperRef, () => setShowDropdown(false));
+  useDetectClickOutside(wrapperRef, () => setShowDropdown(false));
 
   useEffect(() => {
     if (searchInput.trim().length > 0) {

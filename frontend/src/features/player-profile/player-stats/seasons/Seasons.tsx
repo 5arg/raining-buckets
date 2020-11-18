@@ -6,7 +6,7 @@ import {
   SeasonAveragesType,
   SeasonType,
 } from "../../../../types/seasonAverages";
-import detectClickOutsideComponent from "../../../../helpers/detectClickOutsideComponent";
+import useDetectClickOutside from "../../../../hooks/useDetectClickOutside";
 import {
   DropdownWrapper,
   DropdownValueWrapper,
@@ -36,7 +36,7 @@ export default function Seasons({ playerId }: SeasonsProps) {
     }
   );
   const wrapperRef = useRef(null);
-  detectClickOutsideComponent(wrapperRef, () => setShowDropdown(false));
+  useDetectClickOutside(wrapperRef, () => setShowDropdown(false));
 
   const dropdownIndicatorIconStyle: React.CSSProperties = {
     position: "absolute",
