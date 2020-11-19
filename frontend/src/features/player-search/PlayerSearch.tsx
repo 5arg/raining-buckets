@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { usePaginatedQuery } from "react-query";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import {
@@ -13,18 +11,14 @@ import {
 } from "./playerSearch.styles";
 import PlayerSearchItem from "./player-search-item/PlayerSearchItem";
 import { PlayerType } from "../../types/player";
+import usePlayers from "../../hooks/react-query/usePlayers";
 
 export default function PlayerSearch() {
   const [searchInput, setSearchInput] = useState<string>("");
   const [pageNumber, setPageNumber] = useState<number>(1);
-  const { isLoading, resolvedData, error } = usePaginatedQuery<{
-    data: { count: number; players: PlayerType[] };
-  }>(["players", { searchInput, pageNumber }], () =>
-    axios.get(
-      `http://localhost:3000/players?page=${pageNumber}${
-        searchInput && `&name=${searchInput}`
-      }`
-    )
+  const { isLoading, resolvedData, error } = usePlayers(
+    pageNumber,
+    searchInput
   );
 
   return (
@@ -49,13 +43,16 @@ export default function PlayerSearch() {
           />
         </InputWrapper>
         <PlayerItemsContainer>
-          {resolvedData?.data.players.map((player, i) => (
+          {resolvedData?.players.map((player, i) => (
             <PlayerSearchItem key={i} player={player} />
           ))}
         </PlayerItemsContainer>
+        {resolvedData?.players.length === 0 && <p>No players found.</p>}
+        {isLoading && <p>Loading</p>}
+        {error && <p>There has been an error.</p>}
       </SearchWrapper>
       <ChangePageButton
-        disabled={(resolvedData && resolvedData.data.count <= 20) || false}
+        disabled={(resolvedData && resolvedData.count <= 20) || false}
         onClick={() => setPageNumber((pageNumber) => pageNumber + 1)}
       >
         <BsChevronRight />

@@ -1,20 +1,16 @@
 import React, { useRef, useState } from "react";
-import { useQuery } from "react-query";
-import axios from "axios";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
-import {
-  SeasonAveragesType,
-  SeasonType,
-} from "../../../../types/seasonAverages";
-import detectClickOutsideComponent from "../../../../helpers/detectClickOutsideComponent";
+import { SeasonType } from "../../../../types/seasonAverages";
+import useDetectClickOutside from "../../../../hooks/useDetectClickOutside";
 import {
   DropdownWrapper,
   DropdownValueWrapper,
   DropdownValue,
   YearOption,
   YearDropdown,
-  Text,
 } from "./seasons.styles";
+import { StatText } from "../../../common/common.styles";
+import useSeasonAverages from "../../../../hooks/react-query/useSeasonAverages";
 
 type SeasonsProps = {
   playerId: string;
@@ -23,20 +19,12 @@ type SeasonsProps = {
 export default function Seasons({ playerId }: SeasonsProps) {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const [selectedSeason, setSelectedSeason] = useState<SeasonType>();
-  const { isLoading, data, error } = useQuery<{
-    data: SeasonAveragesType;
-  }>(
-    ["season-averages", { playerId }],
-    () => axios.get(`http://localhost:3000/players/seasontotals/${playerId}`),
-    {
-      onSuccess: (data) => {
-        setSelectedSeason(data.data.seasons.slice(-1)[0]);
-      },
-      refetchOnWindowFocus: false,
-    }
+  const { isLoading, data, error } = useSeasonAverages(
+    playerId,
+    setSelectedSeason
   );
   const wrapperRef = useRef(null);
-  detectClickOutsideComponent(wrapperRef, () => setShowDropdown(false));
+  useDetectClickOutside(wrapperRef, () => setShowDropdown(false));
 
   const dropdownIndicatorIconStyle: React.CSSProperties = {
     position: "absolute",
@@ -66,7 +54,7 @@ export default function Seasons({ playerId }: SeasonsProps) {
           </DropdownValue>
         </DropdownValueWrapper>
         <YearDropdown show={showDropdown}>
-          {data?.data.seasons.map((season, i) => (
+          {data?.seasons.map((season, i) => (
             <YearOption
               key={i}
               onClick={() => {
@@ -79,52 +67,54 @@ export default function Seasons({ playerId }: SeasonsProps) {
           ))}
         </YearDropdown>
       </DropdownWrapper>
-      <Text>{`${
+      <StatText>{`${
         selectedSeason && selectedSeason.teams.length > 1 ? "Teams" : "Team"
       }: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => team.team)
-        .join(" | ")}`}</Text>
-      <Text>{`Games played: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Games played: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => team.gamesPlayed)
-        .join(" | ")}`}</Text>
-      <Text>{`Points: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Points: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => team.points)
-        .join(" | ")}`}</Text>
-      <Text>{`Assists: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Assists: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => team.assists)
-        .join(" | ")}`}</Text>
-      <Text>{`Rebounds: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Rebounds: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => team.rebounds)
-        .join(" | ")}`}</Text>
-      <Text>{`Blocks: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Blocks: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => team.blocks)
-        .join(" | ")}`}</Text>
-      <Text>{`Steals: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Steals: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => team.steals)
-        .join(" | ")}`}</Text>
-      <Text>{`Turnovers: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Turnovers: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => team.turnovers)
-        .join(" | ")}`}</Text>
-      <Text>{`Field shot percentage: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Field shot percentage: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => (team.fgPct * 100).toFixed(1) + "%")
-        .join(" | ")}`}</Text>
-      <Text>{`Three shot percentage: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Three shot percentage: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => (team.fg3Pct * 100).toFixed(1) + "%")
-        .join(" | ")}`}</Text>
-      <Text>{`Free throw percentage: ${selectedSeason?.teams
+        .join(" | ")}`}</StatText>
+      <StatText>{`Free throw percentage: ${selectedSeason?.teams
         .filter((team) => team.team !== "TOT")
         .map((team) => (team.ftPct * 100).toFixed(1) + "%")
-        .join(" | ")}`}</Text>
+        .join(" | ")}`}</StatText>
+      {isLoading && <p>Loading</p>}
+      {error && <p>There has been an error.</p>}
     </>
   );
 }

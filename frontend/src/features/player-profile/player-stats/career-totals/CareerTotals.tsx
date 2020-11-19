@@ -1,37 +1,33 @@
 import React from "react";
-import { useQuery } from "react-query";
-import axios from "axios";
-import { CareerTotalsType } from "../../../../types/careerTotals";
-import { Text } from "./career-totals.styles";
+import { StatText } from "../../../common/common.styles";
+import useCareerAverages from "../../../../hooks/react-query/useCareerAverages";
 
 type CareerTotalsProps = {
   playerId: string;
 };
 
 export default function CareerTotals({ playerId }: CareerTotalsProps) {
-  const { isLoading, data, error } = useQuery<{
-    data: CareerTotalsType;
-  }>(["career-totals", { playerId }], () =>
-    axios.get(`http://localhost:3000/players/careertotal/${playerId}`)
-  );
+  const { isLoading, data, error } = useCareerAverages(playerId);
   return (
     <>
-      <Text>{`Games played: ${data?.data.gamesPlayed}`}</Text>
-      <Text>{`Points: ${data?.data.points}`}</Text>
-      <Text>{`Assists: ${data?.data.assists}`}</Text>
-      <Text>{`Rebounds: ${data?.data.rebounds}`}</Text>
-      <Text>{`Blocks: ${data?.data.blocks}`}</Text>
-      <Text>{`Steals: ${data?.data.steals}`}</Text>
-      <Text>{`Turnovers: ${data?.data.turnovers}`}</Text>
-      <Text>{`Field shot percentage: ${
-        data?.data.fgPct && (data?.data.fgPct * 100).toFixed(1)
-      }%`}</Text>
-      <Text>{`Three shot percentage: ${
-        data?.data.fg3Pct && (data?.data.fg3Pct * 100).toFixed(1)
-      }%`}</Text>
-      <Text>{`Free throw percentage: ${
-        data?.data.ftPct && (data.data.ftPct * 100).toFixed(1)
-      }%`}</Text>
+      <StatText>{`Games played: ${data?.gamesPlayed}`}</StatText>
+      <StatText>{`Points: ${data?.points}`}</StatText>
+      <StatText>{`Assists: ${data?.assists}`}</StatText>
+      <StatText>{`Rebounds: ${data?.rebounds}`}</StatText>
+      <StatText>{`Blocks: ${data?.blocks}`}</StatText>
+      <StatText>{`Steals: ${data?.steals}`}</StatText>
+      <StatText>{`Turnovers: ${data?.turnovers}`}</StatText>
+      <StatText>{`Field shot percentage: ${
+        data?.fgPct && (data?.fgPct * 100).toFixed(1)
+      }%`}</StatText>
+      <StatText>{`Three shot percentage: ${
+        data?.fg3Pct && (data?.fg3Pct * 100).toFixed(1)
+      }%`}</StatText>
+      <StatText>{`Free throw percentage: ${
+        data?.ftPct && (data.ftPct * 100).toFixed(1)
+      }%`}</StatText>
+      {isLoading && <p>Loading</p>}
+      {error && <p>There has been an error.</p>}
     </>
   );
 }

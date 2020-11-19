@@ -10,7 +10,6 @@ export const PlayerImage = styled.img`
 `;
 
 export const PlayerName = styled.p`
-  font-family: PTSansCaption-Regular;
   font-size: 18px;
   letter-spacing: 1px;
   transition: font-weight 1s;

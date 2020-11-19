@@ -60,7 +60,6 @@ export const Meta = styled.div`
 export const PlayerImage = styled.img``;
 
 export const PlayerName = styled.p`
-  font-family: PTSansCaption-Regular;
   font-size: 24px;
   letter-spacing: 1px;
 `;
@@ -73,7 +72,6 @@ export const Info = styled.div`
 
 export const InfoText = styled.p`
   flex: 0 0 40%;
-  font-family: PTSansCaption-Regular;
   font-size: 20px;
   color: #595959;
   letter-spacing: 1px;
@@ -99,5 +97,4 @@ export const JerseyNumber = styled.span`
   right: 0;
   top: 16px;
   color: #595959;
-  font-family: PTSansCaption-Regular;
 `;
