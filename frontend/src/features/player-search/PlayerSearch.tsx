@@ -10,7 +10,6 @@ import {
   ChangePageButton,
 } from "./playerSearch.styles";
 import PlayerSearchItem from "./player-search-item/PlayerSearchItem";
-import { PlayerType } from "../../types/player";
 import usePlayers from "../../hooks/react-query/usePlayers";
 
 export default function PlayerSearch() {

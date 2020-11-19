@@ -4,6 +4,7 @@ import GlobalStyle from "./globalStyles";
 import ScrollToTop from "./helpers/ScrollToTop";
 import MainLayout from "./layout/MainLayout";
 import Landing from "./pages/Landing";
+import PlayerCompare from "./pages/PlayerCompare";
 import PlayerProfile from "./pages/PlayerProfile";
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           <MainLayout>
             <Route exact path="/player/:id">
               <PlayerProfile />
+            </Route>
+            <Route exact path="/compare/:id1/:id2?">
+              <PlayerCompare />
             </Route>
           </MainLayout>
         </Switch>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Wrapper,
   PlayerImage,
@@ -36,7 +36,9 @@ export default function PlayerInfo() {
         <SearchDropdown />
       </InputWrapper>
       <ButtonWrapper>
-        <CompareButton>Compare</CompareButton>
+        <Link to={`/compare/${id}`}>
+          <CompareButton>Compare</CompareButton>
+        </Link>
       </ButtonWrapper>
       {data && (
         <Meta>
