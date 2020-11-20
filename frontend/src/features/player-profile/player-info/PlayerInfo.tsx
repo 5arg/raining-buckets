@@ -22,6 +22,7 @@ import {
 } from "../../../utils/Utils";
 import jersey from "../../../assets/jersey.jpg";
 import usePlayer from "../../../hooks/react-query/usePlayer";
+import PlayerMeta from "../../common/player-meta/PlayerMeta";
 
 interface ParamTypes {
   id: string;
@@ -40,29 +41,7 @@ export default function PlayerInfo() {
           <CompareButton>Compare</CompareButton>
         </Link>
       </ButtonWrapper>
-      {data && (
-        <Meta>
-          <PlayerImage src={`data:image/png;base64,${data.profilePicture}`} />
-          <PlayerName>{`${data?.firstName} ${data.lastName}`}</PlayerName>
-          <Info>
-            <InfoText>
-              {teamAbbrevationToTeamName(data.teamAbbreviation)}
-            </InfoText>
-            <InfoText>{data?.position}</InfoText>
-            <InfoText>{heightInFeetAndCm(data.height)}</InfoText>
-            <InfoText>{weightInPoundsAndKg(data.weight)}</InfoText>
-            <InfoText>
-              {new Date(data?.birthdate || "").toLocaleDateString()}
-            </InfoText>
-            <JerseyWrapper>
-              <Jersey src={jersey} />
-              <JerseyNumber>{data?.jerseyNumber}</JerseyNumber>
-            </JerseyWrapper>
-          </Info>
-        </Meta>
-      )}
-      {isLoading && <p>Loading</p>}
-      {error && <p>There has been an error.</p>}
+      <PlayerMeta playerId={id} flexValue={"0 0 100%"} />
     </Wrapper>
   );
 }

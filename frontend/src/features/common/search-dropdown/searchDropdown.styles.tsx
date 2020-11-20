@@ -2,6 +2,10 @@ import styled from "styled-components/macro";
 
 export const SearchWrapper = styled.div`
   position: relative;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const Input = styled.input`
@@ -31,6 +35,7 @@ export const DropdownWrapper = styled.div`
   background: #ff4a4a;
   border-radius: 5px;
   margin-top: 5px;
+  z-index: 9999;
 
   @media (max-width: 800px) {
     width: 100%;

@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import PlayerMeta from "../../common/player-meta/PlayerMeta";
 import SearchDropdown from "../../common/search-dropdown/SearchDropdown";
-import { Container } from "./playersInfo.styles";
+import { Container, PlayerMetaWrapper } from "./playersInfo.styles";
 
 interface ParamTypes {
   id1: string;
@@ -15,6 +16,10 @@ export default function PlayersInfo() {
     <Container>
       <SearchDropdown baseRoute={`/compare`} compareSecondId={id2} />
       <SearchDropdown baseRoute={`/compare`} compareFirstId={id1} />
+      <PlayerMetaWrapper>
+        <PlayerMeta playerId={id1} flexValue={"0 0 50%"} />
+        <PlayerMeta playerId={id2} flexValue={"0 0 50%"} />
+      </PlayerMetaWrapper>
     </Container>
   );
 }
