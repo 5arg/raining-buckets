@@ -1,6 +1,8 @@
 import styled from "styled-components/macro";
 
-export const SearchWrapper = styled.div``;
+export const SearchWrapper = styled.div`
+  position: relative;
+`;
 
 export const Input = styled.input`
   border: 0;

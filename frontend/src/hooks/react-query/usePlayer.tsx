@@ -11,5 +11,7 @@ const getPlayer = async (queryName: string, { playerId }: getPlayerParams) => {
 };
 
 export default function usePlayer(playerId: string) {
-  return usePaginatedQuery<PlayerType>(["players", { playerId }], getPlayer);
+  return usePaginatedQuery<PlayerType>(["players", { playerId }], getPlayer, {
+    enabled: playerId,
+  });
 }

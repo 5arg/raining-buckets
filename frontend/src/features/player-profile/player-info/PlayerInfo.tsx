@@ -14,7 +14,7 @@ import {
   Jersey,
   JerseyNumber,
 } from "./playerInfo.styles";
-import SearchDropdown from "./search-dropdown/SearchDropdown";
+import SearchDropdown from "../../common/search-dropdown/SearchDropdown";
 import {
   heightInFeetAndCm,
   teamAbbrevationToTeamName,
@@ -33,7 +33,7 @@ export default function PlayerInfo() {
   return (
     <Wrapper>
       <InputWrapper>
-        <SearchDropdown />
+        <SearchDropdown baseRoute={`/player`} />
       </InputWrapper>
       <ButtonWrapper>
         <Link to={`/compare/${id}`}>
