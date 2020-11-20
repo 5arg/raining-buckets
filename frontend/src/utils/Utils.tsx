@@ -118,4 +118,27 @@ function weightInPoundsAndKg(poundWeight: string | undefined) {
   return "";
 }
 
-export { teamAbbrevationToTeamName, heightInFeetAndCm, weightInPoundsAndKg };
+function formattedStatName(stat: string) {
+  switch (stat) {
+    case "fgPct": {
+      stat = "Field goal percentage";
+      break;
+    }
+    case "fg3Pct": {
+      stat = "Three shot percentage";
+      break;
+    }
+    case "ftPct": {
+      stat = "Free throw percentage";
+    }
+  }
+
+  return stat?.charAt(0).toUpperCase() + stat?.slice(1);
+}
+
+export {
+  teamAbbrevationToTeamName,
+  heightInFeetAndCm,
+  weightInPoundsAndKg,
+  formattedStatName,
+};

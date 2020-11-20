@@ -31,10 +31,11 @@ export const Info = styled.div`
 `;
 
 export const InfoText = styled.p<playerMetaProps>`
-  flex: 0 0 40%;
+  flex: ${(e) => (e.isCompare ? "0 0 100%" : "0 0 40%")};
   font-size: 20px;
   color: #595959;
   letter-spacing: 1px;
+  margin: ${(e) => e.isCompare && "10px 0px"};
 
   @media (max-width: 800px) {
     flex: 0 0 100%;
