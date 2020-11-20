@@ -19,25 +19,34 @@ import jersey from "../../../assets/jersey.jpg";
 
 type PlayerMetaProps = {
   playerId: string | undefined;
-  flexValue: string;
+  isCompare?: boolean;
 };
 
-export default function PlayerMeta({ playerId, flexValue }: PlayerMetaProps) {
+export default function PlayerMeta({ playerId, isCompare }: PlayerMetaProps) {
   const { isLoading, data, error } = usePlayer(playerId);
   return (
     <>
       {data && (
-        <Meta flex={flexValue}>
-          <PlayerImage src={`data:image/png;base64,${data.profilePicture}`} />
-          <PlayerName>{`${data?.firstName} ${data.lastName}`}</PlayerName>
+        <Meta isCompare={isCompare}>
+          <PlayerImage
+            src={`data:image/png;base64,${data.profilePicture}`}
+            isCompare={isCompare}
+          />
+          <PlayerName
+            isCompare={isCompare}
+          >{`${data?.firstName} ${data.lastName}`}</PlayerName>
           <Info>
-            <InfoText>
+            <InfoText isCompare={isCompare}>
               {teamAbbrevationToTeamName(data.teamAbbreviation)}
             </InfoText>
-            <InfoText>{data?.position}</InfoText>
-            <InfoText>{heightInFeetAndCm(data.height)}</InfoText>
-            <InfoText>{weightInPoundsAndKg(data.weight)}</InfoText>
-            <InfoText>
+            <InfoText isCompare={isCompare}>{data?.position}</InfoText>
+            <InfoText isCompare={isCompare}>
+              {heightInFeetAndCm(data.height)}
+            </InfoText>
+            <InfoText isCompare={isCompare}>
+              {weightInPoundsAndKg(data.weight)}
+            </InfoText>
+            <InfoText isCompare={isCompare}>
               {new Date(data?.birthdate || "").toLocaleDateString()}
             </InfoText>
             <JerseyWrapper>

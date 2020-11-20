@@ -17,8 +17,8 @@ export default function PlayersInfo() {
       <SearchDropdown baseRoute={`/compare`} compareSecondId={id2} />
       <SearchDropdown baseRoute={`/compare`} compareFirstId={id1} />
       <PlayerMetaWrapper>
-        <PlayerMeta playerId={id1} flexValue={"0 0 50%"} />
-        <PlayerMeta playerId={id2} flexValue={"0 0 50%"} />
+        <PlayerMeta playerId={id1} isCompare={true} />
+        <PlayerMeta playerId={id2} isCompare={true} />
       </PlayerMetaWrapper>
     </Container>
   );
