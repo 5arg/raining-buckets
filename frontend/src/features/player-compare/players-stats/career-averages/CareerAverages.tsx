@@ -1,27 +1,25 @@
 import React, { Fragment } from "react";
-import { useParams } from "react-router-dom";
 import HSBar from "react-horizontal-stacked-bar-chart";
+import useCareerAveragesTwoPlayers from "../../../../hooks/react-query/useCareerAveragesTwoPlayers";
+import { formattedStatName } from "../../../../utils/Utils";
 import {
-  Container,
   GamesPlayedWrapper,
   StatsText,
   StatsTitle,
-} from "./playersStats.styles";
-import useCareerAveragesTwoPlayers from "../../../../hooks/react-query/useCareerAveragesTwoPlayers";
-import { formattedStatName } from "../../../../utils/Utils";
+} from "./careerAverages.styles";
 
-interface ParamTypes {
-  id1: string;
-  id2?: string;
-}
+type CareerAveragesProps = {
+  playerId1: string;
+  playerId2?: string;
+};
 
-export default function PlayersStats() {
-  const { id1, id2 } = useParams<ParamTypes>();
-  const { data } = useCareerAveragesTwoPlayers(id1, id2);
-  console.log(data);
-
+export default function CareerAverages({
+  playerId1,
+  playerId2,
+}: CareerAveragesProps) {
+  const { data } = useCareerAveragesTwoPlayers(playerId1, playerId2);
   return (
-    <Container>
+    <>
       <StatsTitle>Career Averages</StatsTitle>
       <GamesPlayedWrapper>
         <StatsText>{data?.responsePlayerOne.gamesPlayed}</StatsText>
@@ -68,6 +66,6 @@ export default function PlayersStats() {
               />
             </Fragment>
           ))}
-    </Container>
+    </>
   );
 }

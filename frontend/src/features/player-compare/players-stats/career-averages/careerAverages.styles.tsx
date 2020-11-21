@@ -1,9 +1,5 @@
 import styled from "styled-components/macro";
 
-export const Container = styled.div`
-  margin-top: 50px;
-`;
-
 export const StatsTitle = styled.p`
   flex: 1 0 0;
   text-align: center;
