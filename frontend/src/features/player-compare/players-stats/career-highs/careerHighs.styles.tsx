@@ -12,6 +12,10 @@ export const StatsTitle = styled.p`
   font-weight: bold;
   width: 50%;
   margin: 30px auto;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const StatsText = styled.p`
@@ -19,4 +23,5 @@ export const StatsText = styled.p`
   text-align: center;
   margin: 10px 0px;
   font-weight: bold;
+  letter-spacing: 1px;
 `;

@@ -13,6 +13,10 @@ export const StatsTitle = styled.p`
   font-weight: bold;
   width: 50%;
   margin: auto;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 type StatsTextProps = {
@@ -24,6 +28,7 @@ export const StatsText = styled.p<StatsTextProps>`
   text-align: center;
   margin: 10px 0px;
   font-weight: ${(e) => e.bold && "bold"};
+  letter-spacing: 1px;
 `;
 
 export const GamesPlayedWrapper = styled.div`
