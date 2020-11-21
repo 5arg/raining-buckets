@@ -13,3 +13,17 @@ export const PlayerMetaWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
 `;
+
+export const SelectPlayerDiv = styled.div`
+  flex: 0 0 50%;
+  text-align: center;
+  position: relative;
+`;
+
+export const SelectPlayerText = styled.p`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  font-size: 30px;
+`;
