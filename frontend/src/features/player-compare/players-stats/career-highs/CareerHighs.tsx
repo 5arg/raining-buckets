@@ -33,12 +33,16 @@ export default function CareerHighs({
                 fontColor="white"
                 data={[
                   {
-                    value: data.responsePlayerOne[key][0].value || 0,
+                    value: data.responsePlayerOne[key][0]
+                      ? data.responsePlayerOne[key][0].value
+                      : 0,
                     color: "#ff4a4a",
                   },
                   {
                     value: data.responsePlayerTwo
-                      ? data.responsePlayerTwo[key][0].value
+                      ? data.responsePlayerTwo[key][0]
+                        ? data.responsePlayerTwo[key][0].value
+                        : 0
                       : 0,
                     color: "#2f3a2f",
                   },
