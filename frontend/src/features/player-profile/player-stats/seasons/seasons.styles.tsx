@@ -7,10 +7,10 @@ export const DropdownWrapper = styled.div`
 export const DropdownValueWrapper = styled.div`
   margin: 10px 20px 5px 20px;
   border-radius: 5px;
-  border: 1px solid #ff4a4a;
+  border: 1px solid #ff5e24;
   padding: 5px 0px;
   font-size: 18px;
-  background: #ff4a4a;
+  background: #ff5e24;
   color: white;
   &:hover {
     cursor: pointer;
@@ -34,7 +34,7 @@ export const YearDropdown = styled.ul<YearDropdownProps>`
   list-style-type: none;
   margin: 0px 20px auto;
   padding: 0;
-  background: #ff4a4a;
+  background: #ff5e24;
   border-radius: 5px;
   left: 0;
   right: 0;
@@ -43,7 +43,7 @@ export const YearDropdown = styled.ul<YearDropdownProps>`
 export const YearOption = styled.li`
   padding: 5px 10px;
   color: white;
-  border: 1px solid #ff4a4a;
+  border: 1px solid #ff5e24;
   border-radius: 5px;
   &:hover {
     background: white;

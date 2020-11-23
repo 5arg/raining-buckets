@@ -38,7 +38,7 @@ export default function SearchDropdown({
   return (
     <SearchWrapper ref={wrapperRef}>
       <BiSearchAlt
-        style={{ position: "absolute", color: "#ff4a4a", top: 24 }}
+        style={{ position: "absolute", color: "#ff5e24", top: 24 }}
       />
       <Input
         placeholder="Search player"

@@ -31,7 +31,7 @@ export default function PlayerSearch() {
       <SearchWrapper>
         <InputWrapper>
           <BiSearchAlt
-            style={{ position: "absolute", color: "#ff4a4a", bottom: 55 }}
+            style={{ position: "absolute", color: "#ff5e24", bottom: 55 }}
           />
           <Input
             onChange={({ target }) => {

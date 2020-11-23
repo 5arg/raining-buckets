@@ -43,7 +43,7 @@ export default function CareerAverages({
                 data={[
                   {
                     value: data.responsePlayerOne[key],
-                    color: "#ff4a4a",
+                    color: "#ff5e24",
                     description:
                       key === "fgPct" || key === "fg3Pct" || key === "ftPct"
                         ? `${(data.responsePlayerOne[key] * 100).toFixed(1)}%`
@@ -53,7 +53,7 @@ export default function CareerAverages({
                     value: data.responsePlayerTwo
                       ? data.responsePlayerTwo[key]
                       : 0,
-                    color: "#2f3a2f",
+                    color: "black",
                     description:
                       key === "fgPct" || key === "fg3Pct" || key === "ftPct"
                         ? `${

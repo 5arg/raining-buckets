@@ -11,7 +11,7 @@ export const SearchWrapper = styled.div`
 export const Input = styled.input`
   border: 0;
   outline: 0;
-  border-bottom: 1px solid #ff4a4a;
+  border-bottom: 1px solid #ff5e24;
   text-align: center;
   font-family: PTSansCaption-Regular;
   line-height: 1.6;
@@ -32,7 +32,7 @@ export const DropdownWrapper = styled.div`
   position: absolute;
   display: ${({ show }: DropdownWrapperProps) => (show ? "block" : "none")};
   width: 255px;
-  background: #ff4a4a;
+  background: #ff5e24;
   border-radius: 5px;
   margin-top: 5px;
   z-index: 9999;
@@ -52,12 +52,12 @@ export const Dropdown = styled.ul`
 export const DropdownItem = styled.li`
   padding: 5px 10px;
   color: white;
-  border: 1px solid #ff4a4a;
+  border: 1px solid #ff5e24;
   border-radius: 5px;
 
   &:hover {
     background: white;
-    color: #ff4a4a;
+    color: #ff5e24;
     cursor: pointer;
   }
 `;

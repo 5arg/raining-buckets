@@ -36,7 +36,7 @@ export default function CareerHighs({
                     value: data.responsePlayerOne[key][0]
                       ? data.responsePlayerOne[key][0].value
                       : 0,
-                    color: "#ff4a4a",
+                    color: "#ff5e24",
                   },
                   {
                     value: data.responsePlayerTwo
@@ -44,7 +44,7 @@ export default function CareerHighs({
                         ? data.responsePlayerTwo[key][0].value
                         : 0
                       : 0,
-                    color: "#2f3a2f",
+                    color: "black",
                   },
                 ]}
               />

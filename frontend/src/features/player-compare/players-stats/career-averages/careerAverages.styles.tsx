@@ -9,7 +9,7 @@ export const StatsTitle = styled.p`
   border-radius: 5px;
   font-weight: bold;
   margin: 0 10px;
-  border: 2px solid #ff4a4a;
+  border: 2px solid #ff5e24;
   font-weight: bold;
   width: 50%;
   margin: auto;

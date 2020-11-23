@@ -34,7 +34,7 @@ export const CompareButton = styled.button`
   line-height: 2px;
   padding: 18px 28px;
   text-transform: uppercase;
-  background-color: #ff4a4a;
+  background-color: #ff5e24;
   color: white;
   border: none;
   border-radius: 5px;

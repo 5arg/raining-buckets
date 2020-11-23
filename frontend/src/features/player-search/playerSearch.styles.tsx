@@ -20,7 +20,7 @@ export const InputWrapper = styled.div`
 export const Input = styled.input`
   border: 0;
   outline: 0;
-  border-bottom: 1px solid #ff4a4a;
+  border-bottom: 1px solid #ff5e24;
   width: 300px;
   text-align: center;
   font-family: PTSansCaption-Regular;
@@ -48,6 +48,6 @@ export const ChangePageButton = styled.button`
   border: none;
   &:hover {
     cursor: pointer;
-    color: ${({ disabled }: ChangePageButtonProps) => !disabled && "#ff4a4a"};
+    color: ${({ disabled }: ChangePageButtonProps) => !disabled && "#ff5e24"};
   }
 `;

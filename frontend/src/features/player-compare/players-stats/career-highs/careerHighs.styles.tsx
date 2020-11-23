@@ -8,7 +8,7 @@ export const StatsTitle = styled.p`
   padding: 5px 0px;
   border-radius: 5px;
   font-weight: bold;
-  border: 2px solid #ff4a4a;
+  border: 2px solid #ff5e24;
   font-weight: bold;
   width: 50%;
   margin: 30px auto;
