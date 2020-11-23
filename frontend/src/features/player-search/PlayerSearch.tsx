@@ -10,7 +10,6 @@ import {
   ChangePageButton,
 } from "./playerSearch.styles";
 import PlayerSearchItem from "./player-search-item/PlayerSearchItem";
-import { PlayerType } from "../../types/player";
 import usePlayers from "../../hooks/react-query/usePlayers";
 
 export default function PlayerSearch() {
@@ -32,7 +31,7 @@ export default function PlayerSearch() {
       <SearchWrapper>
         <InputWrapper>
           <BiSearchAlt
-            style={{ position: "absolute", color: "#ff4a4a", bottom: 55 }}
+            style={{ position: "absolute", color: "#ff5e24", bottom: 55 }}
           />
           <Input
             onChange={({ target }) => {

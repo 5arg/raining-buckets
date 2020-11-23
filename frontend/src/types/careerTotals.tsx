@@ -1,4 +1,5 @@
 export type CareerTotalsType = {
+  [key: string]: number;
   _id: number;
   gamesPlayed: number;
   points: number;

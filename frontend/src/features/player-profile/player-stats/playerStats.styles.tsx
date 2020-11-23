@@ -25,7 +25,6 @@ export const StatTitle = styled.p`
   border-radius: 5px;
   font-weight: bold;
   margin: 0 10px;
-  transition: border 0.7s;
-  border: 2px solid #ff4a4a;
+  border: 2px solid #ff5e24;
   font-weight: bold;
 `;

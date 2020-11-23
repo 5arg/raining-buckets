@@ -4,7 +4,7 @@ import Header from "../features/header/Header";
 import { Container } from "./mainLayout.styles";
 
 type MainLayoutProps = {
-  children: JSX.Element;
+  children: JSX.Element[];
 };
 
 export default function MainLayout({ children }: MainLayoutProps) {

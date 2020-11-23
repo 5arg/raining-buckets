@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   height: 50px;
-  background-color: #2f3a2f;
+  background-color: black;
 `;
 
 export const Wrapper = styled.div`

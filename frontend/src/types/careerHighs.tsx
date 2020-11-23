@@ -1,5 +1,10 @@
 export type CareerHighsType = {
-  _id: number;
+  [key: string]: {
+    value: number;
+    gameId: string;
+    gameDate: string;
+    vsTeamId: number;
+  }[];
   points: {
     value: number;
     gameId: string;

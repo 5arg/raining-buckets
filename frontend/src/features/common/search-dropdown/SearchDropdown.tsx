@@ -8,10 +8,20 @@ import {
   DropdownItem,
   SearchWrapper,
 } from "./searchDropdown.styles";
-import useDetectClickOutside from "../../../../hooks/useDetectClickOutside";
-import usePlayersDropdown from "../../../../hooks/react-query/usePlayersDropdown";
+import useDetectClickOutside from "../../../hooks/useDetectClickOutside";
+import usePlayersDropdown from "../../../hooks/react-query/usePlayersDropdown";
 
-export default function SearchDropdown() {
+type SearchDropdownProps = {
+  baseRoute: string;
+  compareFirstId?: string;
+  compareSecondId?: string;
+};
+
+export default function SearchDropdown({
+  baseRoute,
+  compareFirstId,
+  compareSecondId,
+}: SearchDropdownProps) {
   const [searchInput, setSearchInput] = useState<string>("");
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const history = useHistory();
@@ -28,7 +38,7 @@ export default function SearchDropdown() {
   return (
     <SearchWrapper ref={wrapperRef}>
       <BiSearchAlt
-        style={{ position: "absolute", color: "#ff4a4a", top: 24 }}
+        style={{ position: "absolute", color: "#ff5e24", top: 24 }}
       />
       <Input
         placeholder="Search player"
@@ -42,7 +52,15 @@ export default function SearchDropdown() {
               <DropdownItem
                 key={i}
                 onClick={() => {
-                  history.push(`/player/${player._id}`);
+                  let route;
+                  if (compareFirstId) {
+                    route = `${baseRoute}/${compareFirstId}/${player._id}`;
+                  } else if (compareSecondId) {
+                    route = `${baseRoute}/${player._id}/${compareSecondId}`;
+                  } else {
+                    route = `${baseRoute}/${player._id}`;
+                  }
+                  history.push(route);
                   setSearchInput("");
                 }}
               >

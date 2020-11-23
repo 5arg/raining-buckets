@@ -1,15 +1,10 @@
 import styled from "styled-components/macro";
 import { BsChevronDown } from "react-icons/bs";
-import bgCourt from "../../assets/bg-cour-2.jpg";
+import bgCourt from "../../assets/bg43.jpg";
 
 export const Background = styled.div`
   height: 100vh;
-  background: linear-gradient(
-      0deg,
-      rgb(255, 255, 255, 0.3),
-      rgba(40, 40, 40, 0.7)
-    ),
-    url(${bgCourt});
+  background: url(${bgCourt});
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -37,8 +32,8 @@ export const SubTitle = styled.h3`
 
 export const SearchPlayerButton = styled.button`
   margin-top: 400px;
-  background-color: #68413c;
-  color: #e9e6e2;
+  background-color: #ff5e24;
+  color: black;
   border: none;
   border-radius: 15px;
   padding: 15px 30px;
