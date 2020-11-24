@@ -1,5 +1,5 @@
 import React from "react";
-import { StatText } from "../../../common/common.styles";
+import { StatText, StatValue } from "../../../common/common.styles";
 import useCareerHighs from "../../../../hooks/react-query/useCareerHighs";
 
 type CareerHighsProps = {
@@ -14,13 +14,21 @@ export default function CareerHighs({ playerId }: CareerHighsProps) {
   }
   return (
     <>
-      <StatText>{`Points: ${data?.points.map((e) => e.value)[0]}`}</StatText>
-      <StatText>{`Assists: ${data?.assists.map((e) => e.value)[0]}`}</StatText>
-      <StatText>{`Rebounds: ${
-        data?.rebounds.map((e) => e.value)[0]
-      }`}</StatText>
-      <StatText>{`Blocks: ${data?.blocks.map((e) => e.value)[0]}`}</StatText>
-      <StatText>{`Steals: ${data?.steals.map((e) => e.value)[0]}`}</StatText>
+      <StatText>
+        Points: <StatValue>{data?.points.map((e) => e.value)[0]}</StatValue>
+      </StatText>
+      <StatText>
+        Assists: <StatValue>{data?.assists.map((e) => e.value)[0]}</StatValue>
+      </StatText>
+      <StatText>
+        Rebounds: <StatValue>{data?.rebounds.map((e) => e.value)[0]}</StatValue>
+      </StatText>
+      <StatText>
+        Blocks: <StatValue>{data?.blocks.map((e) => e.value)[0]}</StatValue>
+      </StatText>
+      <StatText>
+        Steals: <StatValue>{data?.steals.map((e) => e.value)[0]}</StatValue>
+      </StatText>
       {isLoading && <p>Loading</p>}
       {error && <p>There has been an error.</p>}
     </>

@@ -36,15 +36,19 @@ export const CompareButton = styled.button`
   text-transform: uppercase;
   background-color: #ff5e24;
   color: white;
-  border: none;
+  border: 1px solid white;
   border-radius: 5px;
   outline: none;
   letter-spacing: 1px;
   font-family: PTSansCaption-Regular;
   font-size: 16px;
+  transition: border 0.5s, background-color 0.5s, color 0.5s;
 
   &:hover {
     cursor: pointer;
+    border: 1px solid #ff5e24;
+    background-color: white;
+    color: #ff5e24;
   }
 
   @media (max-width: 800px) {
@@ -60,7 +64,7 @@ export const Meta = styled.div`
 export const PlayerImage = styled.img``;
 
 export const PlayerName = styled.p`
-  font-size: 24px;
+  font-size: 26px;
   letter-spacing: 1px;
 `;
 
@@ -72,7 +76,7 @@ export const Info = styled.div`
 
 export const InfoText = styled.p`
   flex: 0 0 40%;
-  font-size: 20px;
+  font-size: 22px;
   color: #595959;
   letter-spacing: 1px;
 
