@@ -15,4 +15,5 @@ export const Wrapper = styled.div`
 export const Text = styled.p`
   flex-basis: 10%;
   align-self: center;
+  text-align: center;
 `;
