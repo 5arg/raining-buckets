@@ -32,7 +32,7 @@ export const Info = styled.div`
 
 export const InfoText = styled.p<playerMetaProps>`
   flex: ${(e) => (e.isCompare ? "0 0 100%" : "0 0 40%")};
-  font-size: 20px;
+  font-size: 22px;
   color: #595959;
   letter-spacing: 1px;
   margin: ${(e) => e.isCompare && "10px 0px"};

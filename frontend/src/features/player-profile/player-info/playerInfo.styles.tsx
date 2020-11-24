@@ -64,7 +64,7 @@ export const Meta = styled.div`
 export const PlayerImage = styled.img``;
 
 export const PlayerName = styled.p`
-  font-size: 24px;
+  font-size: 26px;
   letter-spacing: 1px;
 `;
 
@@ -76,7 +76,7 @@ export const Info = styled.div`
 
 export const InfoText = styled.p`
   flex: 0 0 40%;
-  font-size: 20px;
+  font-size: 22px;
   color: #595959;
   letter-spacing: 1px;
 
