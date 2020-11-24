@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   height: 150px;
@@ -8,12 +9,25 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   margin: 0px 15% auto;
   color: #e9e6e2;
-  display: flex;
-  line-height: 118px;
+  line-height: 150px;
 `;
 
-export const Text = styled.p`
-  flex-basis: 10%;
-  align-self: center;
+export const NormalLink = styled.a`
   text-align: center;
+  text-decoration: none;
+  margin-right: 50px;
+
+  &:visited {
+    color: #e9e6e2;
+  }
+`;
+
+export const RouterLink = styled(Link)`
+  text-align: center;
+  text-decoration: none;
+  margin-right: 50px;
+
+  &:visited {
+    color: #e9e6e2;
+  }
 `;
