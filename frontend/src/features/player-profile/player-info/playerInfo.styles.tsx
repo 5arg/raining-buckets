@@ -42,7 +42,7 @@ export const CompareButton = styled.button`
   letter-spacing: 1px;
   font-family: PTSansCaption-Regular;
   font-size: 16px;
-  transition: border 0.8s, background-color 0.8s, color 0.8s;
+  transition: border 0.5s, background-color 0.5s, color 0.5s;
 
   &:hover {
     cursor: pointer;

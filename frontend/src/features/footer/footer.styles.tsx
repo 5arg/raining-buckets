@@ -20,6 +20,10 @@ export const NormalLink = styled.a`
   &:visited {
     color: #e9e6e2;
   }
+
+  &:hover {
+    color: #ff5e24;
+  }
 `;
 
 export const RouterLink = styled(Link)`
@@ -29,5 +33,9 @@ export const RouterLink = styled(Link)`
 
   &:visited {
     color: #e9e6e2;
+  }
+
+  &:hover {
+    color: #ff5e24;
   }
 `;

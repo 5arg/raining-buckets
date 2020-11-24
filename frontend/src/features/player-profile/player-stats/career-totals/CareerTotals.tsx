@@ -36,7 +36,7 @@ export default function CareerTotals({ playerId }: CareerTotalsProps) {
         <StatValue>{data?.fgPct && (data?.fgPct * 100).toFixed(1)}%</StatValue>
       </StatText>
       <StatText>
-        Three shot percentage:
+        Three shot percentage:{" "}
         <StatValue>
           {data?.fg3Pct && (data?.fg3Pct * 100).toFixed(1)}%
         </StatValue>
