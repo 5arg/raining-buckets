@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 export const PlayerImage = styled.img`
-  opacity: 0.5;
+  opacity: 0.7;
   transition: opacity 1s;
 
   @media (max-width: 600px) {
