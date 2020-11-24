@@ -20,6 +20,7 @@ export const Title = styled.h1`
   font-family: CarroisGothicSC-Regular;
   color: #e9e6e2;
   letter-spacing: 3.5px;
+  text-shadow: 1px 1px black;
 `;
 
 export const SubTitle = styled.h3`
@@ -28,11 +29,12 @@ export const SubTitle = styled.h3`
   font-family: CarroisGothicSC-Regular;
   color: #d4d4d4;
   letter-spacing: 2px;
+  text-shadow: 1px 1px black;
 `;
 
 export const SearchPlayerButton = styled.button`
   margin-top: 400px;
-  background-color: #ff5e24;
+  background-color: white;
   color: black;
   border: none;
   border-radius: 15px;
@@ -42,9 +44,10 @@ export const SearchPlayerButton = styled.button`
   letter-spacing: 2px;
   outline: none;
   opacity: 0.8;
-  transition: opacity 0.8s, background-color 0.8s;
+  transition: opacity 0.8s, background-color 0.8s, color 0.8s;
   &:hover {
     cursor: pointer;
+    color: #ff5e24;
     opacity: 1;
   }
 `;

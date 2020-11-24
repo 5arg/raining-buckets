@@ -1,13 +1,15 @@
 import React from "react";
-import { Container, Wrapper, Text } from "./footer.styles";
+import { Container, Wrapper, RouterLink, NormalLink } from "./footer.styles";
 
 export default function Footer() {
   return (
     <Container>
       <Wrapper>
-        <Text>NBA</Text>
-        <Text>Github</Text>
-        <Text>Info</Text>
+        <NormalLink href="https://www.nba.com/">NBA</NormalLink>
+        <NormalLink href="https://github.com/5arg/raining-buckets">
+          Github
+        </NormalLink>
+        <RouterLink to="/info">Info</RouterLink>
       </Wrapper>
     </Container>
   );
