@@ -36,15 +36,19 @@ export const CompareButton = styled.button`
   text-transform: uppercase;
   background-color: #ff5e24;
   color: white;
-  border: none;
+  border: 1px solid white;
   border-radius: 5px;
   outline: none;
   letter-spacing: 1px;
   font-family: PTSansCaption-Regular;
   font-size: 16px;
+  transition: border 0.8s, background-color 0.8s, color 0.8s;
 
   &:hover {
     cursor: pointer;
+    border: 1px solid #ff5e24;
+    background-color: white;
+    color: #ff5e24;
   }
 
   @media (max-width: 800px) {
