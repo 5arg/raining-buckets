@@ -44,7 +44,7 @@ export const ChangePageButton = styled.button`
   margin-top: 110px;
   background: transparent;
   outline: none;
-  font-size: 30px;
+  font-size: 40px;
   border: none;
   &:hover {
     cursor: pointer;
