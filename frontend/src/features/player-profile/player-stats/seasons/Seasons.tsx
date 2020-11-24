@@ -9,7 +9,7 @@ import {
   YearOption,
   YearDropdown,
 } from "./seasons.styles";
-import { StatText } from "../../../common/common.styles";
+import { StatText, StatValue } from "../../../common/common.styles";
 import useSeasonAverages from "../../../../hooks/react-query/useSeasonAverages";
 
 type SeasonsProps = {
@@ -67,52 +67,107 @@ export default function Seasons({ playerId }: SeasonsProps) {
           ))}
         </YearDropdown>
       </DropdownWrapper>
-      <StatText>{`${
-        selectedSeason && selectedSeason.teams.length > 1 ? "Teams" : "Team"
-      }: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => team.team)
-        .join(" | ")}`}</StatText>
-      <StatText>{`Games played: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => team.gamesPlayed)
-        .join(" | ")}`}</StatText>
-      <StatText>{`Points: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => team.points)
-        .join(" | ")}`}</StatText>
-      <StatText>{`Assists: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => team.assists)
-        .join(" | ")}`}</StatText>
-      <StatText>{`Rebounds: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => team.rebounds)
-        .join(" | ")}`}</StatText>
-      <StatText>{`Blocks: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => team.blocks)
-        .join(" | ")}`}</StatText>
-      <StatText>{`Steals: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => team.steals)
-        .join(" | ")}`}</StatText>
-      <StatText>{`Turnovers: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => team.turnovers)
-        .join(" | ")}`}</StatText>
-      <StatText>{`Field shot percentage: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => (team.fgPct * 100).toFixed(1) + "%")
-        .join(" | ")}`}</StatText>
-      <StatText>{`Three shot percentage: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => (team.fg3Pct * 100).toFixed(1) + "%")
-        .join(" | ")}`}</StatText>
-      <StatText>{`Free throw percentage: ${selectedSeason?.teams
-        .filter((team) => team.team !== "TOT")
-        .map((team) => (team.ftPct * 100).toFixed(1) + "%")
-        .join(" | ")}`}</StatText>
+      <StatText>
+        {`${
+          selectedSeason && selectedSeason.teams.length > 1 ? "Teams" : "Team"
+        }: `}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => team.team)
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Games played:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => team.gamesPlayed)
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Points:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => team.points)
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Assists:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => team.assists)
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Rebounds:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => team.rebounds)
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Blocks:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => team.blocks)
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Steals:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => team.steals)
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Turnovers:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => team.turnovers)
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Field shot percentage:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => (team.fgPct * 100).toFixed(1) + "%")
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Three shot percentage:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => (team.fg3Pct * 100).toFixed(1) + "%")
+            .join(" | ")}
+        </StatValue>
+      </StatText>
+      <StatText>
+        Free throw percentage:{" "}
+        <StatValue>
+          {selectedSeason?.teams
+            .filter((team) => team.team !== "TOT")
+            .map((team) => (team.ftPct * 100).toFixed(1) + "%")
+            .join(" | ")}
+        </StatValue>
+      </StatText>
       {isLoading && <p>Loading</p>}
       {error && <p>There has been an error.</p>}
     </>
