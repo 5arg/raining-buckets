@@ -16,6 +16,7 @@ export const NormalLink = styled.a`
   text-align: center;
   text-decoration: none;
   margin-right: 50px;
+  color: #e9e6e2;
 
   &:visited {
     color: #e9e6e2;
@@ -30,6 +31,7 @@ export const RouterLink = styled(Link)`
   text-align: center;
   text-decoration: none;
   margin-right: 50px;
+  color: #e9e6e2;
 
   &:visited {
     color: #e9e6e2;
