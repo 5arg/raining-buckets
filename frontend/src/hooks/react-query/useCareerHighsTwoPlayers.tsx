@@ -16,8 +16,12 @@ const getCareerHighsTwoPlayers = async (
   if (playerId2) {
     await axios
       .all([
-        axios.get(`http://localhost:3000/players/careerhighs/${playerId1}`),
-        axios.get(`http://localhost:3000/players/careerhighs/${playerId2}`),
+        axios.get(
+          `${process.env.REACT_APP_BASE_URL}/players/careerhighs/${playerId1}`
+        ),
+        axios.get(
+          `${process.env.REACT_APP_BASE_URL}/players/careerhighs/${playerId2}`
+        ),
       ])
       .then(
         axios.spread((responsePlayerOne, responsePlayerTwo) => {
@@ -30,7 +34,7 @@ const getCareerHighsTwoPlayers = async (
       );
   } else {
     let resultData = await axios.get(
-      `http://localhost:3000/players/careerhighs/${playerId1}`
+      `${process.env.REACT_APP_BASE_URL}/careerhighs/${playerId1}`
     );
     Object.assign(data, { responsePlayerOne: resultData.data });
   }

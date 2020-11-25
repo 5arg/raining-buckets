@@ -9,7 +9,7 @@ const getCareerHighs = async (
   { playerId }: getCareerHighsParams
 ) => {
   const { data } = await axios.get(
-    `http://localhost:3000/players/careerhighs/${playerId}`
+    `${process.env.REACT_APP_BASE_URL}/players/careerhighs/${playerId}`
   );
 
   return data;

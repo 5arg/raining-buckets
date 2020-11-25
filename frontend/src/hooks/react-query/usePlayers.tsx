@@ -9,7 +9,7 @@ const getPlayers = async (
   { pageNumber, searchInput }: getPlayersParams
 ) => {
   const { data } = await axios.get(
-    `http://localhost:3000/players?page=${pageNumber}${
+    `${process.env.REACT_APP_BASE_URL}/players?page=${pageNumber}${
       searchInput && `&name=${searchInput}`
     }`
   );

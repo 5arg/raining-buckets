@@ -9,7 +9,7 @@ const getSeasonAverages = async (
   { playerId }: getSeasonAveragesParams
 ) => {
   const { data } = await axios.get(
-    `http://localhost:3000/players/seasontotals/${playerId}`
+    `${process.env.REACT_APP_BASE_URL}/players/seasontotals/${playerId}`
   );
 
   return data;

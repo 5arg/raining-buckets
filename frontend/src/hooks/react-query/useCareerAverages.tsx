@@ -9,7 +9,7 @@ const getCareerAverages = async (
   { playerId }: getCareerAveragesParams
 ) => {
   const { data } = await axios.get(
-    `http://localhost:3000/players/careertotal/${playerId}`
+    `${process.env.REACT_APP_BASE_URL}/players/careertotal/${playerId}`
   );
 
   return data;

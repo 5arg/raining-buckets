@@ -45,10 +45,15 @@ export const SearchPlayerButton = styled.button`
   outline: none;
   opacity: 0.8;
   transition: opacity 0.8s, background-color 0.8s, color 0.8s;
+
   &:hover {
     cursor: pointer;
     color: #ff5e24;
     opacity: 1;
+  }
+
+  @media (max-width: 1000px) {
+    margin-top: 100px;
   }
 `;
 

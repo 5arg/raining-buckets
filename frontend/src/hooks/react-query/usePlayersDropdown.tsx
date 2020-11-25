@@ -9,7 +9,7 @@ const getPlayersDropdown = async (
   { searchInput }: getPlayersParams
 ) => {
   const { data } = await axios.get(
-    `http://localhost:3000/players/dropdown?name=${searchInput}`
+    `${process.env.REACT_APP_BASE_URL}/players/dropdown?name=${searchInput}`
   );
 
   return data;

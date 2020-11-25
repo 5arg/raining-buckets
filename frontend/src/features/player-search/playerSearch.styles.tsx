@@ -8,7 +8,7 @@ export const Container = styled(Element)`
 `;
 
 export const SearchWrapper = styled.div`
-  flex: 0 0 80%;
+  flex: 0 0 70%;
 `;
 
 export const InputWrapper = styled.div`

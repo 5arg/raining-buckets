@@ -5,7 +5,9 @@ import { PlayerType } from "../../types/player";
 type getPlayerParams = { playerId: string };
 
 const getPlayer = async (queryName: string, { playerId }: getPlayerParams) => {
-  const { data } = await axios.get(`http://localhost:3000/players/${playerId}`);
+  const { data } = await axios.get(
+    `${process.env.REACT_APP_BASE_URL}/players/${playerId}`
+  );
 
   return data;
 };
