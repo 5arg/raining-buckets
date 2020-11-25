@@ -3,6 +3,10 @@ import styled from "styled-components/macro";
 export const Container = styled.div`
   padding: 40px 0;
   height: calc(100vh - 330px);
+
+  @media (max-width: 500px) {
+    height: auto;
+  }
 `;
 
 export const Text = styled.p`
