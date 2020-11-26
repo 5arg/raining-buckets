@@ -10,6 +10,7 @@ export const Background = styled.div`
   background-repeat: no-repeat;
   background-attachment: fixed;
   text-align: center;
+  position: relative;
 `;
 
 export const Title = styled.h1`
@@ -33,7 +34,8 @@ export const SubTitle = styled.h3`
 `;
 
 export const SearchPlayerButton = styled.button`
-  margin-top: 400px;
+  position: absolute;
+  bottom: 150px;
   background-color: white;
   color: black;
   border: none;
@@ -45,15 +47,14 @@ export const SearchPlayerButton = styled.button`
   outline: none;
   opacity: 0.8;
   transition: opacity 0.8s, background-color 0.8s, color 0.8s;
+  left: 0;
+  right: 0;
+  margin: auto;
 
   &:hover {
     cursor: pointer;
     color: #ff5e24;
     opacity: 1;
-  }
-
-  @media (max-width: 1000px) {
-    margin-top: 100px;
   }
 `;
 

@@ -46,6 +46,8 @@ export const ChangePageButton = styled.button`
   outline: none;
   font-size: 40px;
   border: none;
+  padding: 0;
+
   &:hover {
     cursor: pointer;
     color: ${({ disabled }: ChangePageButtonProps) => !disabled && "#ff5e24"};
