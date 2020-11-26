@@ -15,6 +15,8 @@ export const InputWrapper = styled.div`
   position: relative;
   padding: 50px 0px;
   font-size: 20px;
+  display: flex;
+  justify-content: start;
 `;
 
 export const Input = styled.input`

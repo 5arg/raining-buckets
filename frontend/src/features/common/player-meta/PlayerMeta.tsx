@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "react-loader-spinner";
 import usePlayer from "../../../hooks/react-query/usePlayer";
 import {
   heightInFeetAndCm,
@@ -56,7 +57,16 @@ export default function PlayerMeta({ playerId, isCompare }: PlayerMetaProps) {
           </Info>
         </Meta>
       )}
-      {isLoading && <p>Loading</p>}
+      {isLoading && (
+        <Loader
+          type="ThreeDots"
+          color="#ff5e24"
+          height={100}
+          width={100}
+          visible={true}
+          style={{ margin: "auto" }}
+        />
+      )}
       {error && <p>There has been an error.</p>}
     </>
   );
