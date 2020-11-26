@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-scroll";
 import {
   Background,
@@ -9,6 +9,19 @@ import {
 } from "./jumbotron.styles";
 
 export default function Jumbotron() {
+  useEffect(() => {
+    let viewheight = window.innerHeight;
+    let viewwidth = window.innerWidth;
+    let viewport = document.querySelector("meta[name=viewport]");
+    viewport?.setAttribute(
+      "content",
+      "height=" +
+        viewheight +
+        "px, width=" +
+        viewwidth +
+        "px, initial-scale=1.0"
+    );
+  }, []);
   return (
     <Background>
       <Title>
