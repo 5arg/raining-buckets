@@ -1,5 +1,3 @@
-### Raining Buckets
-
 Raining Buckets is a hobby project which displays stats for active NBA players. It allows users to search for individual players and compare them.
 
 ## Motivation
