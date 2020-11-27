@@ -27,11 +27,7 @@ export default function Info() {
         Some players have missing data and not all player images are correct. :)
       </Text>
       <Title>Technologies used:</Title>
-      <TechnologyText>NodeJS</TechnologyText>
-      <TechnologyText>ExpressJS</TechnologyText>
-      <TechnologyText>MongoDB</TechnologyText>
-      <TechnologyText>React</TechnologyText>
-      <TechnologyText>Typescript</TechnologyText>
+      <TechnologyText>NodeJS ExpressJS MongoDB React Typescript</TechnologyText>
     </Container>
   );
 }
