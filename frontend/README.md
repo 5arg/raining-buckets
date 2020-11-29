@@ -1,5 +1,5 @@
 Raining Buckets frontend is a **React** application written in **Typescript**.
-Application is was bootstrapped up with [Create React App](https://github.com/facebook/create-react-app).
+Application was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Important npm packages
 
