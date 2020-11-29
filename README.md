@@ -3,7 +3,7 @@ Raining Buckets is a hobby project which displays stats for active NBA players. 
 ## Motivation
 
 This project was made as a way of learning to write a full stack application and deploying it to the web.
-Some important features which were also learned or improved regarding web devlopment are:
+Some important features which were also learned or improved regarding web development are:
 
 **backend**
 
